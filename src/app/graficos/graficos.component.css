@@ -1,0 +1,195 @@
+/* General y Principal */
+.main__container{
+    margin-top: 30px;
+    display: flex;
+}
+
+.section_main{
+    width: 100%;
+}
+
+.article{
+    width: 92%;
+    margin-top: 50px;
+}
+
+.subtitle{
+    margin: 10px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    color: #373737;
+}
+
+.img{
+    width: 100%;
+}
+
+.subtitle_modificado{
+    margin-bottom: 10px;
+    padding: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    color: #062f4f;
+    border-bottom: 3px solid;
+    text-align: center;
+}
+
+.margin{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Cane G */
+.article_caneG{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title{
+    margin: 10px;
+    text-align: center;
+    font-family: 'Smooch', cursive;
+    font-weight: 700;
+    font-size: 2.2em;
+    color: #6d7993;
+}
+
+.texto_box1_caneG{
+    font-size: 1.2em;
+}
+
+.box1_caneG{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box2_caneG{
+    width: 30%;
+}
+
+/* Dental */
+.box1_dental{
+    display: flex;
+}
+
+.subtitle_dental{
+    margin: 20px;
+    text-align: center;
+}
+
+.box1_1_dental, .box2_1_dental{
+    width: 50%;
+}
+
+/* Marca Dental */
+.texto_marcaDental{
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    color: #373737;
+}
+
+.texto_resaltado{
+    font-weight: 700;
+    color: #062f4f;
+}
+
+/* Marca */
+.article_marca{
+    display: flex;
+}
+
+.box1_marca, .box2_marca{
+    width: 50%;
+}
+
+.box1_marca{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ul_box1_marca{
+    margin: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.li_box1{
+    margin: 10px;
+    color: #6d7993;
+}
+
+.li_box1:hover{
+    color: #062f4f;
+}
+
+/* Flayes */
+.box1_flayers{
+    display: flex;
+}
+/* publicidad */
+.box1_publicidad{
+    display: flex;
+}
+
+/*Letreros */
+.box1_letreros{
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Responsive General */
+@media screen and (max-width: 600px){
+    .article{
+        width: 94%;
+        margin: 20px;
+    }
+
+    .box1_dental, .article_marca{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box1_1_dental, .box2_1_dental, .box1_marca, .box2_marca, .box1_flayers, .box1_publicidad {
+        width: 100%;
+    }
+
+    .box1_marca{
+        align-items: flex-start;
+    }
+
+    .box1_flayers, .box1_publicidad, .box1_letreros {
+        flex-direction: column;
+    }
+
+    .margin{
+        margin: 0;
+    }
+}
+
+
+/* Responsive CaneG */
+@media screen and (max-width: 600px){
+    .article_caneG{
+        flex-direction: column;
+    }
+
+    .box1_caneG{
+        width: 100%;
+    }
+
+    .box2_caneG{
+        margin: auto;
+    }
+
+    .title{
+        text-align: left;
+    }
+}
+
+

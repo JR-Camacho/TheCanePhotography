@@ -1,0 +1,39 @@
+    <!-- Contenedor principal -->
+  <section class="container__main_redes">
+    <article class="container_logo">
+        <div class="redPhone">
+            <img src="../assets/images/logocane.png" alt="TheCanePhotographic" class="iconPhone" (click)="verRedes()">
+        </div>
+    </article>
+
+    <ng-container *ngIf="ver">
+        <article class="containerRedes">
+            <div class="redes">
+                    <!-- Facebook -->
+            <div class="red">
+                <a href="https://www.facebook.com/profile.php?id=100063738536354" target="_blank"><i class="fa-brands fa-facebook icon"></i></a>
+              </div>
+              <!-- Instagram -->
+              <div class="red">
+                <a href="https://www.instagram.com/thecanephoto?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fa-brands fa-instagram icon"></i></a>
+              </div>
+              <!-- YouTube -->
+              <div class="red">
+                <a href=""><i class="fa-brands fa-youtube icon"></i></a>
+              </div>
+              <!-- LinkedIn -->
+              <div class="red">
+                <a href="https://www.linkedin.com/in/jorman-and%C3%BAjar-arias-323549243" target="_blank"><i class="fa-brands fa-linkedin icon"></i></a>
+              </div>
+
+              <!-- whatsapp -->
+              <div class="red">
+                <a href="https://wa.me/+18093133294?" target="_blank"><i class="fa-brands fa-whatsapp-square icon"></i></a>
+              </div>
+            </div>
+          </article>
+    </ng-container>
+    
+  </section>
+
+  

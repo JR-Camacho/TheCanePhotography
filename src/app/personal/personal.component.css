@@ -1,0 +1,187 @@
+/* General y princpal */
+.main__container{
+    display: flex;
+    margin-top: 30px;
+}
+
+.container{
+    width: 95%;
+}
+
+.subtitle{
+    margin: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    color: #373737;
+}
+
+.top{
+    margin-top: 30px;
+}
+
+.img{
+    width: 100%;
+}
+
+/* Encabezado */
+
+.title{
+    margin: 20px;
+    text-align: center;
+    font-family: 'Smooch', cursive;
+    font-weight: 700;
+    font-size: 2.2em;
+    color: #6d7993;
+}
+
+.texto_encabezado{
+    margin: 10px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 1.4em;
+    color: #162447;
+}
+
+.imagen_encabezado{
+    display: flex;
+    align-items: center;
+}
+
+.imagen{
+    margin: 10px;
+    box-shadow: 0px 0px 10px;
+}
+
+.imagen2{
+    width: 70%;
+    height: 70%;
+}
+
+/* Experiencia */
+
+.ulList{
+    margin: 20px 50px;
+}
+
+.list{
+    margin: 10px;
+}
+
+/* Servicios */
+
+.subtitle_servicios{
+    text-align: center;
+    color: #162447;
+}
+
+.servicios_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* misison, vision valores */
+
+.subtitlemvv{
+    padding: 15px;
+    text-align: center;
+    border-bottom: 3px solid #6d7993;
+    font-size: 1.6em;
+}
+
+.texto_mvv{
+    margin: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    color: #162447;
+}
+
+/* Valores */
+
+.container_valores{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.valor{
+    width: 30%;
+    height: 200px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 9px; */
+    border: 1px solid;
+}
+
+.texto_valor{
+    font-size: 1.2em;
+    color: #1f4068;
+}
+/* 
+.valor1{
+    background-color: #eef6b0;
+}
+
+.valor2{
+    background-color: #72f9f2;
+}
+
+.valor3{
+    background-color: #baf0ce;
+}
+
+.valor4{
+    background-color: #cbc3f8;
+}
+
+.valor5{
+    background-color: #c4e5f9;
+    background-color: #29de92;
+}
+ */
+
+
+ /* Responsive General */
+ 
+ @media screen and (max-width: 809px){
+    .container{
+        width: 100%;
+    }
+
+    .imagen_encabezado{
+       flex-direction: column;
+    }
+
+    .imagen2{
+        width: 90%;
+        height: 90%;
+        margin: 20px;
+    }
+
+    .sub_subtitle{
+        margin: 20px;
+    }
+}
+
+ @media screen and (max-width: 600px){
+     .container_valores{
+        flex-direction: column;
+    }
+
+    .valor{
+        width: 85%;
+    }
+
+    .title{
+        font-size: 2em;
+    }
+ }
+
+ @media screen and (max-width: 420px){
+    .servicios_container{
+        flex-direction: column;
+    }
+ }

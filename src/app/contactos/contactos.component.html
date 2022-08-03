@@ -1,0 +1,29 @@
+<!-- Contenedor Principal -->
+<main class="main__container">
+    <!-- Componente Barra de Redes
+    <app-barra-redes></app-barra-redes> -->
+    <!-- Contenedor del formulario -->
+    <article class="form_container">
+        <h1 class="title">Contactanos</h1>
+        <h2 class="subtitle">Rellena el formulario y envianos tu peticion</h2>
+        <!-- Formulario -->
+        <form action="https://formsubmit.co/thecanephotography@gmail.com" method="POST" class="form">
+            <!-- Contenedor de datos principales -->
+            <div class="datos">
+                <input type="text" placeholder="Nombre" name="nombre" class="input">
+                <input type="email" placeholder="Correo" name="email" class="input">
+                <input type="text" placeholder="Telefono" name="telefono" class="input">
+                <input type="text" placeholder="Direccion" name="direccion" class="input">
+                <input type="submit" class="btn">
+
+                <input type="hidden" name="_next" value="http://localhost:4200/contactos">
+                <input type="hidden" name="_captcha" value="false">
+            </div>
+            <!-- Contendedor del Comentario -->
+            <div class="comentario">
+                <label for="comentario">Agrega una peticion</label>
+                <textarea name="comentario" id="" cols="30" rows="10" class="textarea"></textarea>
+            </div>
+        </form>
+    </article>
+</main>

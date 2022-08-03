@@ -1,0 +1,129 @@
+<!-- Cabecera -->
+<header>
+  <!-- Barra de Navegacion -->
+  <ng-container *ngIf="!width">
+    <nav class="navBar">
+      <!-- Logo Principal -->
+      <div class="logo">
+        <a routerLink="" class="logoLink"><img src="../assets/images/logocanenegro.png" alt="theCanePhotographic" class="iLogo"></a>
+      </div>
+      <!-- Menu de Navegacion -->
+      <div class="nav">
+        <!-- Lista -->
+        <ul class="menu">
+          <li class="listMenu">
+            <a routerLink="/sesiones" class="listLink">Sesiones</a>
+          </li>
+          <ng-container *ngIf="canUse">
+            <li class="listMenu">
+              <a routerLink="/galeria" class="listLink">Galeria</a>
+            </li>
+          </ng-container>
+          <li class="listMenu">
+            <a routerLink="/graficos" class="listLink">Graficos</a>
+          </li>
+          <li class="listMenu">
+            <a routerLink="/personal" class="listLink">Personal</a>
+          </li>
+          <li class="listMenu">
+            <a routerLink="/contactos" class="listLink">Contactos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </ng-container>
+
+  <!-- Barra Phone -->
+  <ng-container *ngIf="width">
+    <nav #navBar class="navBar" [ngClass]= "seeM ? 'navBarPhone' : 'navBar'">
+
+      <!-- Logo Principal -->
+      <div class="logo" *ngIf="seeM == false">
+        <a routerLink="" class="logoLink"><img src="../assets/images/logocanenegro.png" alt="theCanePhotographic" class="iLogo"></a>
+      </div>
+
+      <div class="menuContainer" [ngClass]="seeM ? 'center' : 'navBar'">
+        <button class="btnBarra" (click)="seeMenu()" *ngIf="seeM == false"><i class="fa-solid fa-bars btnM"></i></button>
+
+        <button class="btnBarra" (click)="seeMenu()" *ngIf="seeM"><i class="fa-solid fa-xmark btnM"></i></button>
+      </div>
+
+
+      <!-- Menu de Navegacion -->
+      <div class="navPhone" *ngIf="seeM">
+        <!-- Lista -->
+        <ul class="menu menuPhone">
+          <li class="listMenuPhone">
+            <a routerLink="" class="listLink">Inicio</a>
+          </li>
+          <li class="listMenuPhone">
+            <a routerLink="/sesiones" class="listLink">Sesiones</a>
+          </li>
+          <ng-container *ngIf="canUse">
+            <li class="listMenuPhone">
+              <a routerLink="/galeria" class="listLink">Galeria</a>
+            </li>
+          </ng-container>
+          <li class="listMenuPhone">
+            <a routerLink="/graficos" class="listLink">Graficos</a>
+          </li>
+          <li class="listMenuPhone">
+            <a routerLink="/personal" class="listLink">Personal</a>
+          </li>
+          <li class="listMenuPhone">
+            <a routerLink="/contactos" class="listLink">Contactos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </ng-container>
+ 
+</header>
+
+<div class="flex">
+  <ng-container *ngIf="!phone">
+    <app-barra-redes></app-barra-redes>
+  </ng-container>
+
+  <ng-container *ngIf="phone">
+    <app-barra-redes-phone></app-barra-redes-phone>
+  </ng-container>
+  
+  <!-- Rutas -->
+  <router-outlet *ngIf="!seeM"></router-outlet>
+</div>
+
+<!-- Pie -->
+<footer>
+  <!-- Contenedor de Pie -->
+  <section class="footer__container">
+    <!-- Contenido de Pie -->
+    <article class="footer_contenido">
+      <!-- Subtitulo -->
+      <h2 class="nombre_empresa">The Cane Photography</h2>
+      <!-- Contenedor de Ubicacion y Descripcion -->
+      <div class="ubicacion_descripcion">
+        <!-- Logo -->
+        <div class="caneLogo">
+          <img src="../assets/images/logocane.png" alt="TheCanePhotographic" class="iCaneLogo">
+        </div>
+        <!-- Descripcion -->
+        <div class="descripcion width">
+          <p class="textoDescripcion margenTexto">Estudio de fotografias, videografia y edicion de contenido audiovisual en Republica Dominicana.</p>
+        </div>
+        <!-- Ubicacion -->
+        <div>
+        <div class="ubicacion width">
+          <p class="textoUbicacion">Direccion: <span class="spanUbicacion">Bani - El Carreton</span></p>
+          <p class="textoUbicacion">Telefono: <a href="tel:+18093133294">809 313-3294</a></p>
+          <p class="textoUbicacion">Correo: <a href="mailto:thecanephotography@gmail.com">thecanephotography@gmail.com</a></p>
+        </div>
+      </div>
+      <!-- Derechos de Autor -->
+      <article class="derechos">
+          <p class="textoDerechos margenTexto">© 2022 TheCanePhotographic. All rights reserved.</p>
+      </article>
+    </div>
+  </article>
+  </section>
+</footer>

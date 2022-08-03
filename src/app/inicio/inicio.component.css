@@ -1,0 +1,273 @@
+/* General y Principal */
+.main__container{
+    display: flex;
+}
+
+.subtitle{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: #373737;
+}
+
+.sub_subtitle{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    color: #062f4f;
+    margin-bottom: 10px;
+}
+
+.article{
+    width: 92%;
+}
+
+.top{
+    margin-top: 50px;
+}
+
+.img{
+    width: 100%;
+    /* border-radius: 20px; */
+}
+
+/* Articulo Titulos */
+.contenido_titulos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    margin: 20px 0;
+    font-family: 'Cormorant SC', serif;
+    font-weight: 700;
+    font-size: 2.2em;
+    color: #6d7993;
+}
+
+
+.box_subtitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Articulo 2 */
+.articulo2{
+    display: flex;
+    align-items: center;
+}
+
+.box2_1{
+    width: 50%;
+}
+
+.box2_2{
+    margin-left: 20px;
+    width: 50%;
+}
+
+.img3{
+    display: block;
+    margin: auto;
+    width: 70%;
+}
+
+.texto_box2_2{
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Articulo 3 */
+.articulo3{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.box3_1{
+    width: 50%;
+    margin: 20px;
+    /* margin-top: 130px; */
+}
+
+.subtitle_box3{
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 30px;
+    color: #373737;
+}
+
+.texto_box3{
+    text-align: left;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 1.2;
+    color: #062f4f;
+}
+
+.ul_box3{
+    margin: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.li_box3{
+    margin: 10px;
+    color: #6d7993;
+}
+
+.li_box3:hover{
+    color: #062f4f;
+}
+
+.box3_2{
+    width: 50%;
+}
+
+.img4{
+    width: 90%;
+    height: 90%;
+    margin-left: auto;
+}
+
+/* Articulo 4 */
+.box4{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtitle_box4{
+    margin: 20px 0;
+}
+
+.box4_1, .box4_2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 10px;
+}
+
+.iframe1, .iframe2{
+    width: 90%;
+    border-radius: 10px;
+}
+
+.textoBox4{
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #6d7993;
+    text-align: center;
+    margin: 30px;
+}
+
+
+/* Responsive General */
+@media screen and (max-width: 960px){
+    /* Articulo 1 */
+    .contenido_titulos{
+        display: block;
+    }
+
+    .subtitle{
+        margin-bottom: 10px;
+    }
+
+    /* Articulo 3 */
+    .articulo3{
+        display: block;
+    }
+
+    .box3_1, .box3_2{
+        width: 100%;
+    }
+
+    .img4{
+        width: 100%;
+    }
+
+    .subtitle_box3, .texto_box3{
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (max-width: 674px){
+    .article{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .main__container{
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .textoBox4{
+        text-align: left;
+        margin-left: 0px;
+    }
+}
+
+/* Responsive articulo 1 */
+@media screen and (max-width: 720px){
+    .title{
+        margin: 0;
+        text-align: left;
+        font-size: 2em;
+    }
+}
+
+/* Responsive Articulo 2 */
+@media screen and (max-width: 1000px) {
+    .articulo2{
+        display: block;
+    }
+
+    .img3, .box2_1, .box2_2{
+        width: 100%;
+    }
+
+    .box2_2{
+        margin-top: 50px;
+        margin-left: 0;
+    }
+
+    .texto_box2_2{
+        text-align: left;
+    }   
+}
+
+/* Responsive Articulo 4 */
+
+@media screen and (max-width: 809px){
+    /* .articulo4{
+        width: 100%;
+    } */
+
+    .box4{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box4_1, .box4_2{
+        width: 100%;
+        align-items: center;
+    }
+
+    .iframe1, .iframe2{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .iframe1, .iframe2{
+        height: 200px;
+    }
+}

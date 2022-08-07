@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
   width:any;
   seeM:boolean = false;
   phone:boolean = false;
+  mostrar:boolean = false;
 
   seeMenu(){
     if(this.seeM == false){

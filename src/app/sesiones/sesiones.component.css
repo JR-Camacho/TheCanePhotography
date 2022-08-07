@@ -1,7 +1,10 @@
 /* Principal y Genaral */
 .main__container{
-    display: flex;
     margin-top: 30px;
+}
+
+.container{
+    width: 100%;
 }
 
 .title{
@@ -24,11 +27,35 @@
 .section{
     width: 45%;
     margin: 20px;
-    cursor: pointer;
+}
+
+.sesion1Img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    /* background-image: url(/assets/images/estudio/sesion6/img2.jpeg);
+    background-position: center;
+    background-repeat: no-repeat; */
+    /* background-size: cover; */
+}
+
+.sesion2Img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    /* background-image: url(/assets/images/exterior/varias/img7.jpeg); */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
 }
 
 .img{
     width: 100%;
+    display: block;
 }
 
 /* Contenedor de Sesiones */
@@ -40,7 +67,7 @@
 }
 
 .btn-ver{
-    position: absolute;
+    /* position: absolute; */
     background: transparent;
     width: 200px;
     height: 50px;
@@ -53,7 +80,7 @@
     background: transparent;
 }
 
-.in{
+/* .in{
     left: 320px;
     top: 535px;
 }
@@ -61,7 +88,7 @@
 .ex{
     right: 270px;
     top: 535px;
-}
+} */
 
 /* General Responsive */
 @media screen and (max-width: 1045px){

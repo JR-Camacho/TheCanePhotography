@@ -43,7 +43,7 @@
       </div>
 
       <div class="menuContainer" [ngClass]="seeM ? 'center' : 'navBar'">
-        <button class="btnBarra" (click)="seeMenu()" *ngIf="seeM == false"><i class="fa-solid fa-bars btnM"></i></button>
+        <button class="btnBarra margin_computer" (click)="seeMenu()" *ngIf="seeM == false"><i class="fa-solid fa-bars btnM"></i></button>
 
         <button class="btnBarra" (click)="seeMenu()" *ngIf="seeM"><i class="fa-solid fa-xmark btnM"></i></button>
       </div>
@@ -54,24 +54,24 @@
         <!-- Lista -->
         <ul class="menu menuPhone">
           <li class="listMenuPhone">
-            <a routerLink="" class="listLink">Inicio</a>
+            <a routerLink="" class="listLink" (click)="seeMenu()">Inicio</a>
           </li>
           <li class="listMenuPhone">
-            <a routerLink="/sesiones" class="listLink">Sesiones</a>
+            <a routerLink="/sesiones" class="listLink" (click)="seeMenu()">Sesiones</a>
           </li>
           <ng-container *ngIf="canUse">
             <li class="listMenuPhone">
-              <a routerLink="/galeria" class="listLink">Galeria</a>
+              <a routerLink="/galeria" class="listLink" (click)="seeMenu()">Galeria</a>
             </li>
           </ng-container>
           <li class="listMenuPhone">
-            <a routerLink="/graficos" class="listLink">Graficos</a>
+            <a routerLink="/graficos" class="listLink" (click)="seeMenu()">Graficos</a>
           </li>
           <li class="listMenuPhone">
-            <a routerLink="/personal" class="listLink">Personal</a>
+            <a routerLink="/personal" class="listLink" (click)="seeMenu()">Personal</a>
           </li>
           <li class="listMenuPhone">
-            <a routerLink="/contactos" class="listLink">Contactos</a>
+            <a routerLink="/contactos" class="listLink" (click)="seeMenu()">Contactos</a>
           </li>
         </ul>
       </div>
@@ -90,7 +90,8 @@
   </ng-container>
   
   <!-- Rutas -->
-  <router-outlet *ngIf="!seeM"></router-outlet>
+  <!-- <router-outlet *ngIf="!seeM"></router-outlet> -->
+  <router-outlet></router-outlet>
 </div>
 
 <!-- Pie -->
@@ -121,7 +122,7 @@
       </div>
       <!-- Derechos de Autor -->
       <article class="derechos">
-          <p class="textoDerechos margenTexto">© 2022 TheCanePhotographic. All rights reserved.</p>
+          <p class="textoDerechos margenTexto">© 2022 The Cane Photography. All rights reserved.</p>
       </article>
     </div>
   </article>

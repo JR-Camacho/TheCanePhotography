@@ -2,7 +2,8 @@
 
 /* Contenido Principal y General */
 .container__main_redes{
-  top: 220px;
+  /* top: 180px; */
+  top: 33%;
   position: sticky;
 }
 

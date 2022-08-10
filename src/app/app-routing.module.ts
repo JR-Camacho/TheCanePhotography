@@ -35,9 +35,9 @@ const routes: Routes = [
   {
     path: 'sesiones_estudio', component:SesionesEstudioComponent
   },
-  {
-    path: '**', component:PageNotFoundComponent
-  },
+  // {
+  //   path: '**', component:PageNotFoundComponent
+  // },
 ];
 
 @NgModule({

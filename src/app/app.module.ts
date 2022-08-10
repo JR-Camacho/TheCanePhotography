@@ -14,6 +14,7 @@ import { BarraRedesComponent } from './barra-redes/barra-redes.component';
 import { SesionesExteriorComponent } from './sesiones-exterior/sesiones-exterior.component';
 import { SesionesEstudioComponent } from './sesiones-estudio/sesiones-estudio.component';
 import { BarraRedesPhoneComponent } from './barra-redes-phone/barra-redes-phone.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -36,7 +37,9 @@ import { BarraRedesPhoneComponent } from './barra-redes-phone/barra-redes-phone.
     AppRoutingModule,
     LayoutModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

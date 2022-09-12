@@ -1,0 +1,80 @@
+<!-- Contenedor Principal -->
+<main class="main__container top">
+    <!-- Componente Barra de Redes -->
+    <!-- <ng-container *ngIf="!phone">
+        <app-barra-redes></app-barra-redes>
+    </ng-container> -->
+
+     <ng-container *ngIf="!phone">
+    <app-barra-redes></app-barra-redes>
+  </ng-container>
+
+  <ng-container *ngIf="phone">
+    <app-barra-redes-phone></app-barra-redes-phone>
+  </ng-container>
+  
+    <!-- Contenedor Secundario -->
+    <section class="contenido">
+        <!-- Articulo de Titulos -->
+        <article class="contenido_titulos article">
+            <div class="titles">
+                <h1 class="title">The cane photography</h1>
+                <h2 class="title">Capturamos tus mejores momentos</h2>
+                <div class="box_subtitle">
+                    <h2 class="subtitle">Una sesión de fotos profesional inspirada en las revistas. Déjame mostrarte la belleza que hay en ti, tendrás tus mejores retratos.</h2>
+                </div>
+            </div>
+            <!-- Articulo 1 de Contenido -->
+            <article class="articulo1 article">
+                <img src="../assets/images/img1.jpeg" alt="TheCanePhotographic" class="img4">
+            </article>
+        </article>
+          <!-- Articulo 2 de Contenido -->
+        <article class="articulo2 article top">
+            <!-- Imagen -->
+            <div class="box2_1">
+                <img src="../assets/images/estudio/sesion1/img1.jpeg" alt="TheCanePhotographic" class="img2 img">
+            </div>
+            <!-- Textos -->
+            <div class="box2_2">
+                <h3 class="sub_subtitle">¿Cuándo fue la última vez que te fotografiaste profesionalmente?</h3>
+                <p class="texto_box2_2">Todo el mundo se merece tener fotos profesionales que podrían protagonizar la portada de una revista.</p>
+                <img src="../assets/images/estudio/sesion6/img1.jpeg" alt="TheCanePhotographic" class="img3">
+            </div>
+        </article>
+        <!-- Articulo 3 de Contenido -->
+        <article class="articulo3 article top">
+            <!-- Texto y Listas -->
+            <div class="box3_1">
+                <h2 class="subtitle_box3">¿Qué incluye una sesión de fotos?</h2>
+                <p class="texto_box3">Las sesiones de fotos se organizan con una entrevista personal donde hablamos sobre tu imagen, vestuario, maquillaje,  peinado y las posibilidades que te ofrece el estudio.</p>
+                <ul class="ul_box3">
+                    <li class="li_box3">Una entrevista personal</li>
+                    <li class="li_box3">Una consulta de vestuario adaptado a tu estilo</li>
+                    <li class="li_box3">Maquillaje y peinado</li>
+                    <li class="li_box3">Múltiples cambios de vestuario</li>
+                    <li class="li_box3">Diferentes fondos y luces</li>
+                </ul>
+            </div>
+            <!-- Imagen -->
+            <div class="box3_2">
+                <img src="../assets/images/img2.jpeg" alt="TheCanePhotographic" class="img4">
+            </div>
+        </article>
+        <!-- Articulo 4 de Contenido -->
+        <article class="articulo4 article">
+            <h2 class="subtitle_box4 sub_subtitle">Somos expertos en videografia</h2>
+            <p class="textoBox4">Le damos la mejor a nuestros clientes con el fin de que sus momentos favoritos queden registados, no solo en sus memorias, sino que tambien en las nuestras.</p>
+            <!-- Iframes -->
+            <div class="box4">
+                <div class="box4_1">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qU5sttAlrS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe1"></iframe>
+                </div>
+                <div class="box4_2">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u5aQr1JiaDg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe2"></iframe>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
+

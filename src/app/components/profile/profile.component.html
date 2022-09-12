@@ -1,0 +1,17 @@
+<main class="main">
+    <h1 class="title">{{userForUpdate.name | uppercase}}</h1>
+    <div class="form_container">
+        <form action="" class="form">
+            <!-- <i class="fa-solid fa-user icon"></i> -->
+            <div class="row">
+                <label for="name" class="label">Nombre</label>
+                <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="userForUpdate.name">
+            </div>
+            <div class="row">
+                <label for="password" class="label">Contraseña</label>
+                <input type="password" class="input" name="password" placeholder="Contraseña" [(ngModel)]="userForUpdate.password">
+            </div>
+            <input type="button" value="Actualizar" class="input btn" (click)="updateMyProfile()">
+        </form>
+    </div>
+</main>

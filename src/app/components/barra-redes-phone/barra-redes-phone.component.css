@@ -1,0 +1,56 @@
+.container__main_redes{
+    position: sticky;
+    top: 57%;
+    display: flex;
+    align-items: center;
+}
+
+.container_logo{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.redes{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    left: 100px;
+    bottom: -45px;
+  }
+
+  .red {
+    margin: 10px;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    display: block;
+    color: black;
+  }
+
+.redPhone{
+    width: 70px;
+    margin: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 50%;
+  }
+  
+  .iconPhone{
+    width: 100%;
+  }
+  
+.article_redes{
+    display: flex;
+    flex-wrap: wrap;
+  }

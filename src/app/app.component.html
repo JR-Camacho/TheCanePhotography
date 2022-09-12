@@ -28,6 +28,17 @@
           <li class="listMenu">
             <a routerLink="/contactos" class="listLink">Contactos</a>
           </li>
+          <li class="listMenu">
+            <button class="config" routerLink="/profile">
+              <i class="fa-solid fa-gears iconConfig"></i>
+            </button>
+            
+          </li>
+          <li class="listMenu" *ngIf="loggedIn">
+            <button class="config" (click)="logout()">
+              <i class="fa-solid fa-right-from-bracket iconConfig"></i>
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -81,18 +92,18 @@
 </header>
 
 <div class="flex">
-  <ng-container *ngIf="!phone">
+  <!-- <ng-container *ngIf="!phone">
     <app-barra-redes></app-barra-redes>
-  </ng-container>
+  </ng-container> -->
 
-  <ng-container *ngIf="phone">
+  <!-- <ng-container *ngIf="phone">
     <app-barra-redes-phone></app-barra-redes-phone>
   </ng-container>
-  
+   -->
   <!-- Rutas -->
   <!-- <router-outlet *ngIf="!seeM"></router-outlet> -->
-  <router-outlet class="router"></router-outlet>
 </div>
+<router-outlet class="router"></router-outlet>
 
 <!-- Pie -->
 <footer>

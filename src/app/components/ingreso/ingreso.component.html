@@ -1,0 +1,24 @@
+<main class="main">
+    <!-- <ng-container *ngIf="!phone"> -->
+        <!-- <app-barra-redes></app-barra-redes> -->
+      <!-- </ng-container> -->
+<!-- 
+      <ng-container *ngIf="!phone">
+        <app-barra-redes></app-barra-redes>
+      </ng-container>
+    
+      <ng-container *ngIf="phone">
+        <app-barra-redes-phone></app-barra-redes-phone>
+      </ng-container> -->
+
+    <div class="form_container">
+        <h1 class="title">ADMINISTRACION</h1>
+        <form action="" class="form">
+            <i class="fa-solid fa-gears icon"></i>
+            <input type="email" class="input" name="email" placeholder="Email" [(ngModel)]="user.email">
+            <input type="password" class="input" name="password" placeholder="Contraseña" [(ngModel)]="user.password">
+            <input type="button" value="Ingresar" class="input btn" (click)="login()">
+        </form>
+    </div>
+</main>
+

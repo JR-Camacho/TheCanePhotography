@@ -61,6 +61,24 @@ header {
   color: #9099a2;
 }
 
+.config{
+  color: #6d7993;
+  border: none;
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.config:hover{
+  color: #9099a2;
+}
+
+.iconConfig{
+  font-size: 20px;
+}
+
+
 /* Nav Bar Phone */
 @media screen and (max-width: 674px){
   .navBar{

@@ -1,0 +1,26 @@
+<main class="main">
+    <!-- <ng-container *ngIf="!phone"> -->
+        <!-- <app-barra-redes></app-barra-redes> -->
+      <!-- </ng-container> -->
+<!-- 
+      <ng-container *ngIf="!phone">
+        <app-barra-redes></app-barra-redes>
+      </ng-container>
+    
+      <ng-container *ngIf="phone">
+        <app-barra-redes-phone></app-barra-redes-phone>
+      </ng-container> -->
+
+    <div class="form_container">
+        <h1 class="title">DEFINE UN NUEVO ADMINISTRADOR</h1>
+        <form action="" class="form">
+            <i class="fa-solid fa-lock icon"></i>
+            <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="user.name">
+            <input type="email" class="input" name="email" placeholder="Email" [(ngModel)]="user.email">
+            <input type="password" class="input" name="password" placeholder="Contraseña" [(ngModel)]="user.password">
+            <input type="button" value="Registrar" class="input btn" (click)="register()">
+        </form>
+    </div>
+</main>
+
+

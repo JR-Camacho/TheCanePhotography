@@ -1,0 +1,15 @@
+<h1 class="title">NUEVA FOTO</h1>
+
+<div class="form_container">
+    <form action="" class="form" enctype="multipart/form-data">
+        <div class="contenedor-btn-file" (click)="open()">
+            <div class="mandato" *ngIf="!photoForPreview">
+                 <i class="fa-solid fa-image icon"></i>
+                  Adjuntar fotografia
+             </div>
+             <img *ngIf="photoForPreview" src="{{photoForPreview}}" alt="" class="img_preview">
+            <input type="file" id="photo" name="photo" class="input_file" (change)="file($event)" accept=".jpg, .png, jpge">
+        </div>
+        <input type="button" class="btn" value="Subir" (click)="newPhoto()">
+    </form>
+</div>

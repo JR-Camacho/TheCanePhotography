@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { NewPhotoComponent } from './components/new-photo/new-photo.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     IngresoComponent,
     RegistroComponent,
     ProfileComponent,
+    NewPhotoComponent,
   ],
   imports: [
     BrowserModule,

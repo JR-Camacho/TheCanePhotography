@@ -40,9 +40,6 @@ export class ProfileComponent implements OnInit {
   }
 
   updateMyProfile(){
-    this.headers = new HttpHeaders({
-      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
-    });
     this.userService.updateUserProfile(this.headers, this.userForUpdate).subscribe(res => {
       console.log(res)
       this.getMyProfile();

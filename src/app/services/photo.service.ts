@@ -8,7 +8,15 @@ export class PhotoService {
 
   constructor(private http:HttpClient) { }
 
-  getPhotos(){
-    
-  }  
+  setNewPhoto(headers:any, photo:FormData){
+    return this.http.post('http://127.0.0.1:8000/api/store-photo', photo, {headers:headers});
+  }
+
+  getFotosEstudio(){
+    return this.http.get('http://127.0.0.1:8000/api/photos-estudio');
+  }
+
+  getFotosExterior(){
+    return this.http.get('http://127.0.0.1:8000/api/photos-exterior');
+  }
 }

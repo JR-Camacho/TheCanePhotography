@@ -15,8 +15,8 @@ export class IngresoComponent implements OnInit {
   constructor(private authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
-   }
-
+   
+  }
 
   user:User = new User;
   userLogged:any;

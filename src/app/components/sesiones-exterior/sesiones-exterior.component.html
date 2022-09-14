@@ -15,12 +15,17 @@
     <section class="container">
         <h1 class="title">SESIONES DE EXTERIOR</h1>
         <!-- Contenedor de Sesiones -->
-        <article class="sesiones__container">
-
-            <section class="sesion1 section">
-                    <img src="../assets/images/exterior/sesion1/img1.jpeg" alt="TheCanePhotographic" class="img img1">
+        <button class="btn_new" [routerLink]="['/new-photo', 'exterior']" *ngIf="isLogged"><i class="fa-solid fa-plus icon_new"></i></button>
+        <!-- Contenedor de Sesiones -->
+        <article class="sesiones__container" *ngIf="photos">
+            <section class="section" [ngClass]="isLogged? 'section_edit' : 'section'" *ngFor="let photo of photos">
+                <img src="{{photo.photo}}" alt="TheCanePhotography" class="img">
+                <div class="action" *ngIf="isLogged">
+                    <button class="btn"><i class="fa-solid fa-pen-to-square icon"></i></button>
+                    <button class="btn"><i class="fa-solid fa-trash-can icon"></i></button>
+                </div>
             </section>
-            <section class="sesion1 section">
+            <!-- <section class="sesion1 section">
                     <img src="../assets/images/exterior/sesion1/img2.jpeg" alt="TheCanePhotographic" class="img img1">
             </section>
             <section class="sesion1 section">
@@ -31,11 +36,11 @@
             </section>
             <section class="sesion1 section">
                     <img src="../assets/images/exterior/sesion1/img5.jpeg" alt="TheCanePhotographic" class="img img1">
-            </section>
+            </section> -->
            
 
             <!-- varios -->
-            <section class="section">
+            <!-- <section class="section">
                 <img src="../assets/images/exterior/varias/img1.jpeg" alt="TheCanePhotographic" class="img">
             </section>
             <section class="section">
@@ -152,7 +157,7 @@
             </section>
             <section class="sesion1 section">
                     <img src="../assets/images/exterior/sesion3/img5.jpeg" alt="TheCanePhotographic" class="img img1">
-            </section>
+            </section> -->
         </article>
     </section> 
 </main>

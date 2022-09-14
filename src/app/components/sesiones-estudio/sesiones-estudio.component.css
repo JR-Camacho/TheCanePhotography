@@ -21,6 +21,17 @@
     text-align: center;
 }
 
+.btn_new{
+    margin: 20px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.icon_new{
+    font-size: 40px;
+}
+
 .sesiones__container{
     width: 92%;
     display: flex;
@@ -34,8 +45,29 @@
     margin: 20px;
 }
 
+.section_edit{
+    border: 1px solid;
+}
+
 .img{
     width: 100%;
+}
+
+.action{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.btn{
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.icon{
+    font-size: 20px;
 }
 
 /* General Responsive */

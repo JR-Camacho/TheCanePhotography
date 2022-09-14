@@ -4,6 +4,7 @@ import { ContactosComponent } from './components/contactos/contactos.component';
 import { GraficosComponent } from './components/graficos/graficos.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { NewPhotoComponent } from './components/new-photo/new-photo.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PersonalComponent } from './components/personal/personal.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'profile', component:ProfileComponent
   },
+  {
+    path: 'new-photo/:category', component:NewPhotoComponent
+  },
+
   // {
   //   path: '**', component:PageNotFoundComponent
   // },

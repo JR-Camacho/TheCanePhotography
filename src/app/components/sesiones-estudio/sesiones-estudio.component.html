@@ -14,12 +14,17 @@
     <!-- Contenedor secundario -->
     <section class="container">
         <h1 class="title">SESIONES DE ESTUDIO</h1>
+        <button class="btn_new" [routerLink]="['/new-photo', 'estudio']" *ngIf="isLogged"><i class="fa-solid fa-plus icon_new"></i></button>
         <!-- Contenedor de Sesiones -->
-        <article class="sesiones__container">
-            <section class="section">
-                <img src="../assets/images/estudio/varias/img9.jpeg" alt="TheCanePhotographic" class="img">
+        <article class="sesiones__container" *ngIf="photos">
+            <section class="section" [ngClass]="isLogged? 'section_edit' : 'section'" *ngFor="let photo of photos">
+                <img src="{{photo.photo}}" alt="TheCanePhotography" class="img">
+                <div class="action" *ngIf="isLogged">
+                    <button class="btn"><i class="fa-solid fa-pen-to-square icon"></i></button>
+                    <button class="btn"><i class="fa-solid fa-trash-can icon"></i></button>
+                </div>
             </section>
-            <section class="section">
+            <!-- <section class="section">
                 <img src="../assets/images/estudio/varias/img10.jpeg" alt="TheCanePhotographic" class="img">
             </section>
             <section class="section">
@@ -95,10 +100,10 @@
             </section>
             <section class="section">
                 <img src="../assets/images/estudio/sesion5/img3.jpeg" alt="TheCanePhotographic" class="img">
-            </section>
+            </section> -->
 
             <!-- Varias -->
-            <section class="section">
+            <!-- <section class="section">
                 <img src="../assets/images/estudio/varias/img1.jpeg" alt="TheCanePhotographic" class="img">
             </section>
             <section class="section">
@@ -121,7 +126,7 @@
             </section>
             <section class="section">
                 <img src="../assets/images/estudio/varias/img8.jpeg" alt="TheCanePhotographic" class="img">
-            </section>
+            </section> -->
         </article>
     </section> 
 </main>

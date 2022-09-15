@@ -12,17 +12,24 @@ import { UserService } from '../../services/user.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private userService:UserService, private router:Router) { }
+  constructor(private userService:UserService, private authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
     this.password = sessionStorage.getItem('password');
     sessionStorage.getItem('token') == null? this.router.navigate(['/ingresar']): this.getMyProfile();
+    this.getAcounts();
   }
 
   user:any;
   userForUpdate:User = new User();
   headers:any;
   password:any;
+  acounts:any;
+  needConfirmation:boolean = false;
+
+  setConfirmation(){
+    this.needConfirmation? this.needConfirmation = false : this.needConfirmation = true;
+  }
 
   getMyProfile(){
     this.headers = new HttpHeaders({
@@ -39,12 +46,27 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  getAcounts(){
+    this.userService.getUsers(this.headers).subscribe(res => {
+      console.log(res)
+      this.acounts = Object.values(res);
+    }, err => console.log(err))
+  }
+
   updateMyProfile(){
     this.userService.updateUserProfile(this.headers, this.userForUpdate).subscribe(res => {
       console.log(res)
       this.getMyProfile();
     }, 
     err => console.log(err));
+  }
+
+  deleteAcount(id:number){
+    this.authService.deleteAcount(this.headers, id).subscribe(res => {
+      console.log(res);
+      sessionStorage.removeItem('token');
+      this.router.navigate(['/'])
+    }, err => console.log(err));
   }
 
 }

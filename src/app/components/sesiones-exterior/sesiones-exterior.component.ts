@@ -24,6 +24,11 @@ export class SesionesExteriorComponent implements OnInit {
   phone: boolean = false;
   isLogged:boolean = false;
   photos:any[];
+  needConfirmation:boolean = false;
+
+  setConfirmation(){
+    this.needConfirmation? this.needConfirmation = false : this.needConfirmation = true;
+  }
 
   getPhotos(){
     this.photoService.getFotosExterior().subscribe(res => {
@@ -32,6 +37,16 @@ export class SesionesExteriorComponent implements OnInit {
     }, err => {
       console.log(err)
     })
+  }
+
+  deletePhoto(id:number){
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    });
+    this.photoService.deletePhoto(headers, id).subscribe(res => {
+      console.log(res);
+      this.getPhotos();
+    }, err => console.log(err));
   }
  
 }

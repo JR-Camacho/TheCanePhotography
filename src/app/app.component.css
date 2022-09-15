@@ -204,6 +204,10 @@ header {
   margin: 30px;
 }
 
+.link{
+  text-decoration: none;
+}
+
 /* Responsive Footer */
 @media screen and (max-width: 560px){
   .textoDescripcion{

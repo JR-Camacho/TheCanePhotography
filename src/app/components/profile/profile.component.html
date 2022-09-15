@@ -1,17 +1,39 @@
 <main class="main">
     <h1 class="title">{{userForUpdate.name | uppercase}}</h1>
-    <div class="form_container">
-        <form action="" class="form">
-            <!-- <i class="fa-solid fa-user icon"></i> -->
-            <div class="row">
-                <label for="name" class="label">Nombre</label>
-                <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="userForUpdate.name">
+    <div class="container">
+        <div class="acounts_container">
+            <h2 class="subtitle">ADMINISTRADORES</h2>
+            <button class="btn_nuevo" routerLink="/registrar">NUEVO <i class="fa-solid fa-user"></i></button>
+            <div class="acounts" *ngIf="acounts">
+                <div class="acount" *ngFor="let acount of acounts">
+                    <div class="info_acount">
+                        <p class="text name">{{acount.name}} <i class="fa-solid fa-user"></i></p>
+                        <p class="text email">{{acount.email}} <i class="fa-solid fa-envelope"></i></p>
+                    </div>
+                    <i class="fa-solid fa-gears iconAdmin"></i>
+                </div>
             </div>
-            <div class="row">
-                <label for="password" class="label">Contraseña</label>
-                <input type="password" class="input" name="password" placeholder="Contraseña" [(ngModel)]="userForUpdate.password">
-            </div>
-            <input type="button" value="Actualizar" class="input btn" (click)="updateMyProfile()">
-        </form>
+        </div>
+        <div class="form_container">
+            <h2 class="subtitle">EDITA TU CUENTA</h2>
+            <form action="" class="form">
+                <!-- <i class="fa-solid fa-user icon"></i> -->
+                <div class="row">
+                    <label for="name" class="label">Nombre</label>
+                    <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="userForUpdate.name">
+                </div>
+                <div class="row">
+                    <label for="password" class="label">Contraseña</label>
+                    <input type="password" class="input" name="password" placeholder="Contraseña"
+                        [(ngModel)]="userForUpdate.password">
+                </div>
+                <input type="button" value="Actualizar" class="input btn" (click)="updateMyProfile()">
+                <input type="button" value="Eliminar cuenta" class="input btn eliminar" *ngIf="!needConfirmation" (click)="setConfirmation()">
+                <div class="action confirmation" *ngIf="needConfirmation">
+                    <button class="btn_action cancel" (click)="setConfirmation()">Cancelar</button>
+                    <button class="btn_action confirm" (click)="deleteAcount(user.id)">Eliminar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </main>

@@ -19,9 +19,13 @@
         <article class="sesiones__container" *ngIf="photos">
             <section class="section" [ngClass]="isLogged? 'section_edit' : 'section'" *ngFor="let photo of photos">
                 <img src="{{photo.photo}}" alt="TheCanePhotography" class="img">
-                <div class="action" *ngIf="isLogged">
-                    <button class="btn"><i class="fa-solid fa-pen-to-square icon"></i></button>
-                    <button class="btn"><i class="fa-solid fa-trash-can icon"></i></button>
+                <div class="action" *ngIf="isLogged && !needConfirmation">
+                    <button class="btn" [routerLink]="['/edit-photo', photo.id]"><i class="fa-solid fa-pen-to-square icon"></i></button>
+                    <button class="btn" (click)="setConfirmation()"><i class="fa-solid fa-trash-can icon"></i></button>
+                </div>
+                <div class="action confirmation" *ngIf="needConfirmation">
+                    <button class="btn cancel" (click)="setConfirmation()">Cancelar</button>
+                    <button class="btn confirm" (click)="deletePhoto(photo.id)">Eliminar</button>
                 </div>
             </section>
             <!-- <section class="section">

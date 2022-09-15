@@ -22,7 +22,7 @@ export class RegistroComponent implements OnInit {
 
   headers:any;
   user:User = new User;
-
+ 
   register(){
     this.authService.register(this.user, this.headers).subscribe(res => {
       console.log(res);

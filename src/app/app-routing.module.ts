@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactosComponent } from './components/contactos/contactos.component';
+import { EditPhotoComponent } from './components/edit-photo/edit-photo.component';
 import { GraficosComponent } from './components/graficos/graficos.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -47,7 +48,9 @@ const routes: Routes = [
   {
     path: 'new-photo/:category', component:NewPhotoComponent
   },
-
+  {
+    path: 'edit-photo/:id', component:EditPhotoComponent
+  },
   // {
   //   path: '**', component:PageNotFoundComponent
   // },

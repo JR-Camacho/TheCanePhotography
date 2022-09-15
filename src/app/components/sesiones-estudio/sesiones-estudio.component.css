@@ -32,6 +32,10 @@
     font-size: 40px;
 }
 
+.container{
+    width: 100%;
+}
+
 .sesiones__container{
     width: 92%;
     display: flex;
@@ -64,6 +68,21 @@
     background-color: #fff;
     border: none;
     cursor: pointer;
+}
+
+.cancel, .confirm{
+    border-radius: 3px;
+    width: 70px;
+    height: 30px;
+    color: #fff;
+}
+
+.cancel{
+    background-color: #85929E;
+}
+
+.confirm{
+    background-color: #7B241C;
 }
 
 .icon{

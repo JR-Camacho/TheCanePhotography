@@ -21,4 +21,8 @@ export class AuthService {
     return this.http.get('http://127.0.0.1:8000/api/logout', {headers:headers});
   }
 
+  deleteAcount(headers:any,id:number){
+    return this.http.delete(`http://127.0.0.1:8000/api/delete-acount/${id}`, {headers:headers});
+  }
+
 }

@@ -21,6 +21,7 @@ import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NewPhotoComponent } from './components/new-photo/new-photo.component';
+import { EditPhotoComponent } from './components/edit-photo/edit-photo.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NewPhotoComponent } from './components/new-photo/new-photo.component';
     RegistroComponent,
     ProfileComponent,
     NewPhotoComponent,
+    EditPhotoComponent,
   ],
   imports: [
     BrowserModule,

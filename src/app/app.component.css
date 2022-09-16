@@ -78,6 +78,23 @@ header {
   font-size: 20px;
 }
 
+/* Nav Bar */
+
+@media screen and (max-width: 810px) {
+  .listMenu{
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .listMenu{
+    padding: 12px;
+  }
+
+  .listLink{
+    font-size: 1rem;
+  }
+}
 
 /* Nav Bar Phone */
 @media screen and (max-width: 674px){
@@ -171,7 +188,7 @@ header {
 }
 
 .width{
-  width: 300px;
+  width: 330px;
 }
 
 .textoDescripcion{

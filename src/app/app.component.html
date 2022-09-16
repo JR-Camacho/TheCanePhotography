@@ -32,7 +32,6 @@
             <button class="config" routerLink="/profile">
               <i class="fa-solid fa-gears iconConfig"></i>
             </button>
-            
           </li>
           <li class="listMenu" *ngIf="loggedIn">
             <button class="config" (click)="logout()">
@@ -83,6 +82,16 @@
           <li class="listMenuPhone">
             <a routerLink="/contactos" class="listLink" (click)="seeMenu()">Contactos</a>
           </li>
+          <li class="listMenuPhone">
+            <button class="config" routerLink="/profile" (click)="seeMenu()">
+              <i class="fa-solid fa-gears iconConfig"></i>
+            </button>
+          </li>
+          <li class="listMenuPhone" *ngIf="loggedIn">
+            <button class="config" (click)="logout()" (click)="seeMenu()">
+              <i class="fa-solid fa-right-from-bracket iconConfig"></i>
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -125,9 +134,9 @@
         <!-- Ubicacion -->
         <div>
         <div class="ubicacion width">
-          <p class="textoUbicacion">Direccion: <span class="spanUbicacion">Bani - El Carreton</span></p>
-          <p class="textoUbicacion">Telefono: <a class="link" href="tel:+18093133294">809 313-3294</a></p>
-          <p class="textoUbicacion">Correo: <a class="link" href="mailto:thecanephotography@gmail.com">thecanephotography@gmail.com</a></p>
+          <p class="textoUbicacion">Direccion: <span class="spanUbicacion">Bani - Santo Domingo </span> <i class="fa-solid fa-location-pin"></i></p>
+          <p class="textoUbicacion">Telefono: <a class="link" href="tel:+18093133294">809 313-3294 </a> <i class="fa-solid fa-phone"></i></p>
+          <p class="textoUbicacion">Correo: <a class="link" href="mailto:thecanephotography@gmail.com">thecanephotography@gmail.com </a> <i class="fa-solid fa-envelope"></i></p>
         </div>
       </div>
       <!-- Derechos de Autor -->

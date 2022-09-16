@@ -10,14 +10,13 @@
   <ng-container *ngIf="phone">
     <app-barra-redes-phone></app-barra-redes-phone>
   </ng-container>
-  
-    <!-- Contenedor del formulario -->
+<!-- 
     <article class="form_container">
         <h1 class="title">CONTACTANOS</h1>
         <h2 class="subtitle">{{"Rellena el formulario y envianos tu peticion" | uppercase}}</h2>
-        <!-- Formulario -->
+
         <form action="https://formsubmit.co/thecanephotography@gmail.com" method="POST" class="form">
-            <!-- Contenedor de datos principales -->
+        
             <div class="datos">
                 <input type="text" placeholder="Nombre" name="nombre" class="input">
                 <input type="email" placeholder="Correo" name="email" class="input">
@@ -28,11 +27,27 @@
                 <input type="hidden" name="_next" value="http://localhost:4200/contactos">
                 <input type="hidden" name="_captcha" value="false">
             </div>
-            <!-- Contendedor del Comentario -->
+         
             <div class="comentario">
                 <label for="comentario">Agrega una peticion</label>
                 <textarea name="comentario" id="" cols="30" rows="10" class="textarea"></textarea>
             </div>
         </form>
-    </article>
+    </article> -->
+
+    <div class="container">
+        <div class="form_container">
+            <h1 class="title">CONTACTA CON NOSOTROS</h1>
+              <form action="" class="form">
+                <i class="fa-solid fa-paper-plane icon"></i>
+                  <input type="text" class="input" name="name" placeholder="Nombre">
+                  <input type="email" class="input" name="email" placeholder="Correo">
+                  <input type="text" class="input" name="phone" placeholder="Telefono">
+                  <input type="text" class="input" name="address" placeholder="Direccion">
+                    <textarea name="message" cols="30" rows="10" class="input textarea" placeholder="Mensaje"></textarea>
+                  <input type="button" value="Enviar" class="input btn">
+              </form>
+          </div>
+    </div>
+
 </main>

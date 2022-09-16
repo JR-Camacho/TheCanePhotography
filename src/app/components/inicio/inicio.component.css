@@ -1,7 +1,12 @@
 /* General y Principal */
 .main__container{
     display: flex;
+    /* margin-top: 30px; */
 }
+
+/* .contenido{
+    width: 100%;
+} */
 
 .subtitle{
     font-family: 'Open Sans', sans-serif;
@@ -21,9 +26,9 @@
     width: 92%;
 }
 
-/* .top{
+.top{
     margin-top: 50px;
-} */
+}
 
 .img{
     width: 100%;
@@ -45,6 +50,13 @@
     color: #6d7993;
 }
 
+.eslogan{
+    margin: 20px 0;
+    font-family: 'Cormorant SC', serif;
+    font-weight: 700;
+    font-size: 1.8em;
+    color: #6d7993;
+}
 
 .box_subtitle{
     display: flex;
@@ -194,20 +206,16 @@
         margin-bottom: 10px;
     }
 
-}
-
-@media screen and (max-width: 674px){
     .article{
         width: 100%;
+    }
+
+    .contenido{
+        margin: 20px;
     }
 }
 
 @media screen and (max-width: 600px){
-    .main__container{
-        flex-direction: column;
-        margin: 20px;
-    }
-
     .textoBox4{
         text-align: left;
         margin-left: 0px;

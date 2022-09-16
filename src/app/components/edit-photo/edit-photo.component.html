@@ -1,6 +1,6 @@
-<h1 class="title">EDITA UNA FOTO</h1>
-
-<div class="form_container">
+<main class="main">
+    <div class="form_container">
+    <h1 class="title">EDITA UNA FOTO</h1>
     <form action="" class="form" enctype="multipart/form-data">
         <div class="contenedor-btn-file" (click)="open()">
              <img *ngIf="!photoForPreview && photo" src="{{photo.photo}}" alt="" class="img_preview">
@@ -10,4 +10,5 @@
         <input type="button" class="btn" value="Actualizar" (click)="updatePhoto()">
     </form>
 </div>
+</main>
 

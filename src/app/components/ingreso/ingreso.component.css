@@ -46,3 +46,15 @@
 .icon{
     font-size: 100px;
 }
+
+@media screen and (max-width: 725px) {   
+    .form{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 400px) {   
+    .title{
+        font-size: 1.5rem;
+    }
+}

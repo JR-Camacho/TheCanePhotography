@@ -10,6 +10,7 @@
   <ng-container *ngIf="phone">
     <app-barra-redes-phone></app-barra-redes-phone>
   </ng-container>
+  
 <!-- 
     <article class="form_container">
         <h1 class="title">CONTACTANOS</h1>
@@ -37,15 +38,22 @@
 
     <div class="container">
         <div class="form_container">
-            <h1 class="title">CONTACTA CON NOSOTROS</h1>
+            <h1 class="title">AGENDA UNA CITA</h1>
               <form action="" class="form">
                 <i class="fa-solid fa-paper-plane icon"></i>
-                  <input type="text" class="input" name="name" placeholder="Nombre">
-                  <input type="email" class="input" name="email" placeholder="Correo">
-                  <input type="text" class="input" name="phone" placeholder="Telefono">
-                  <input type="text" class="input" name="address" placeholder="Direccion">
-                    <textarea name="message" cols="30" rows="10" class="input textarea" placeholder="Mensaje"></textarea>
-                  <input type="button" value="Enviar" class="input btn">
+                <label for="name" class="label">Nombre completo *</label>
+                  <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="message.name">
+                  <label for="name" class="label">Dirección de correo electronico *</label>
+                  <input type="email" class="input" name="email" placeholder="Correo" [(ngModel)]="message.email">
+                  <label for="name" class="label">Celular o telefono</label>
+                  <input type="text" class="input" name="phone" placeholder="Telefono" [(ngModel)]="message.phone">
+                  <label for="name" class="label">Lugar</label>
+                  <input type="text" class="input" name="place" placeholder="Lugar" [(ngModel)]="message.place">
+                  <label for="name" class="label">Fecha y hora</label>
+                  <input type="datetime-local" class="input" name="date_time" [(ngModel)]="message.date_time">
+                  <label for="name" class="label">Mensaje</label>
+                    <textarea name="message" cols="30" rows="10" class="input textarea" placeholder="Mensaje" [(ngModel)]="message.message"></textarea>
+                  <input type="button" value="Enviar" class="input btn" (click)="newMessage()">
               </form>
           </div>
     </div>

@@ -5,6 +5,8 @@ import { EditPhotoComponent } from './components/edit-photo/edit-photo.component
 import { GraficosComponent } from './components/graficos/graficos.component';
 import { IngresoComponent } from './components/ingreso/ingreso.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { MessageComponent } from './components/message/message.component';
+import { MessengerComponent } from './components/messenger/messenger.component';
 import { NewPhotoComponent } from './components/new-photo/new-photo.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PersonalComponent } from './components/personal/personal.component';
@@ -50,6 +52,12 @@ const routes: Routes = [
   },
   {
     path: 'edit-photo/:id', component:EditPhotoComponent
+  },
+  {
+    path: 'messages', component:MessengerComponent
+  },
+  {
+    path: 'message/:id', component:MessageComponent
   },
   // {
   //   path: '**', component:PageNotFoundComponent

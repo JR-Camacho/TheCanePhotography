@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { MessagesService } from 'src/app/services/messages.service';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -12,12 +13,13 @@ import { UserService } from '../../services/user.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private userService:UserService, private authService:AuthService, private router:Router) { }
+  constructor(private userService:UserService, private authService:AuthService, private messagesService:MessagesService, private router:Router) { }
 
   ngOnInit(): void {
     this.password = sessionStorage.getItem('password');
     sessionStorage.getItem('token') == null? this.router.navigate(['/ingresar']): this.getMyProfile();
     this.getAcounts();
+    this.getMessages();
   }
 
   user:any;
@@ -26,9 +28,11 @@ export class ProfileComponent implements OnInit {
   password:any;
   acounts:any;
   needConfirmation:boolean = false;
+  messages:any[];
+  counter:number;
 
   setConfirmation(){
-    this.needConfirmation? this.needConfirmation = false : this.needConfirmation = true;
+    this.needConfirmation = true;
   }
 
   getMyProfile(){
@@ -61,12 +65,21 @@ export class ProfileComponent implements OnInit {
     err => console.log(err));
   }
 
-  deleteAcount(id:number){
-    this.authService.deleteAcount(this.headers, id).subscribe(res => {
+  deleteAcount(){
+    this.authService.deleteAcount(this.headers, this.user.id).subscribe(res => {
       console.log(res);
       sessionStorage.removeItem('token');
       this.router.navigate(['/'])
     }, err => console.log(err));
+  }
+
+  getMessages(){
+    this.messagesService.getMessages(this.headers).subscribe(res => {
+      console.log(res);
+      this.messages = Object.values(res);
+      this.counter = this.messages.length;
+      console.log(this.counter);
+    }, err => console.log(err))
   }
 
 }

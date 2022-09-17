@@ -67,6 +67,23 @@
     text-align: center;
 }
 
+.btn_msg{
+    margin: 20px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.icon_msg{
+    font-size: 30px;
+}
+
+.counter{
+    font-size: 1.1rem;
+    color: #7B241C;
+    font-weight: bold;
+}
+
 .subtitle{
     font-family: 'Cormorant SC', serif;
     font-size: 1.8em;
@@ -111,7 +128,7 @@
     background-color: #7B241C;
 }
 
-.action{
+/* .action{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -137,6 +154,58 @@
 
 .confirm{
     background-color: #7B241C;
+} */
+
+.modal{
+    width: 40vw;
+    height: 20vh;
+    left: 30vw;
+    top: 40vh;
+    min-height: 150px;
+    background-color: #021120;
+    position: absolute;
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.text_modal{
+    margin: 10px;
+}
+
+.action_modal{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.btn_modal{
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 3px;
+    width: 80px;
+    height: 45px;
+}
+
+.cancel{
+    background-color: #85929E;
+}
+
+.confirm{
+    background-color: #7B241C;
+}
+
+@media screen and (max-width:850px) {
+    .modal{
+        width: 55%;
+        left: 22.5%;
+    }
 }
 
 @media screen and (max-width: 725px) {
@@ -147,6 +216,14 @@
 
     .acounts_container, .form_container{
         width: 95%;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .modal{
+        width: 85vw;
+        left: 7.5vw;
     }
 }
 

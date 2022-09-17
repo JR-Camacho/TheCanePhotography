@@ -1,6 +1,14 @@
 <main class="main">
     <div class="section">
         <h1 class="title">{{userForUpdate.name | uppercase}}</h1>
+        <button class="btn_msg" routerLink="/messages"><i class="fa-solid fa-message icon_msg"></i> <span class="counter"> {{counter}}</span></button>
+        <div class="modal" *ngIf="needConfirmation">
+            <p class="text_modal">¿Realmente desea eliminar este mensaje?</p>
+            <div class="action_modal">
+                <button class="btn_modal cancel" (click)="needConfirmation = false">Cancelar</button>
+                <button class="btn_modal confirm" (click)="deleteAcount()">Confirmar</button>
+            </div>
+        </div>
         <div class="container">
         <div class="acounts_container">
             <h2 class="subtitle">ADMINISTRADORES</h2>
@@ -30,10 +38,7 @@
                 </div>
                 <input type="button" value="Actualizar" class="input btn" (click)="updateMyProfile()">
                 <input type="button" value="Eliminar cuenta" class="input btn eliminar" *ngIf="!needConfirmation" (click)="setConfirmation()">
-                <div class="action confirmation" *ngIf="needConfirmation">
-                    <button class="btn_action cancel" (click)="setConfirmation()">Cancelar</button>
-                    <button class="btn_action confirm" (click)="deleteAcount(user.id)">Eliminar</button>
-                </div>
+                <input type="button" value="Eliminar cuenta" class="input btn eliminar" *ngIf="needConfirmation" (click)="setConfirmation()" disabled>
             </form>
         </div>
     </div>

@@ -9,13 +9,13 @@
 } */
 
 .subtitle{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Cormorant SC', serif;
     font-size: 1em;
     color: #373737;
 }
 
 .sub_subtitle{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Cormorant SC', serif;
     font-size: 1.5em;
     text-align: center;
     color: #062f4f;
@@ -32,7 +32,6 @@
 
 .img{
     width: 100%;
-    /* border-radius: 20px; */
 }
 
 /* Articulo Titulos */
@@ -48,6 +47,7 @@
     font-weight: 700;
     font-size: 2.2em;
     color: #6d7993;
+    text-align: center;
 }
 
 .eslogan{
@@ -87,7 +87,6 @@
 
 .texto_box2_2{
     font-size: 1.1em;
-    font-weight: 700;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -96,13 +95,11 @@
 .articulo3{
     display: flex;
     align-items: center;
-    /* justify-content: center; */
 }
 
 .box3_1{
     width: 50%;
     margin: 20px;
-    /* margin-top: 130px; */
 }
 
 .subtitle_box3{
@@ -115,7 +112,6 @@
 .texto_box3{
     text-align: left;
     margin-top: 30px;
-    font-weight: 700;
     font-size: 1.2;
     color: #062f4f;
 }
@@ -169,7 +165,6 @@
 }
 
 .textoBox4{
-    font-weight: 700;
     font-size: 1.2em;
     color: #6d7993;
     text-align: center;
@@ -213,6 +208,10 @@
     .contenido{
         margin: 20px;
     }
+
+    .eslogan{
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -226,7 +225,7 @@
 @media screen and (max-width: 720px){
     .title{
         margin: 0;
-        text-align: left;
+        /* text-align: left; */
         font-size: 2em;
     }
 }

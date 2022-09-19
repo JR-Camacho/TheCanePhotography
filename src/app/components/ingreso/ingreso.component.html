@@ -1,22 +1,23 @@
 <main class="main">
-    <!-- <ng-container *ngIf="!phone"> -->
-        <!-- <app-barra-redes></app-barra-redes> -->
-      <!-- </ng-container> -->
-<!-- 
-      <ng-container *ngIf="!phone">
-        <app-barra-redes></app-barra-redes>
-      </ng-container>
-    
-      <ng-container *ngIf="phone">
-        <app-barra-redes-phone></app-barra-redes-phone>
-      </ng-container> -->
-
+  <app-spinner *ngIf="isLoading"></app-spinner>
+  <div class="overlay" *ngIf="msg">
+    <div class="modal">
+      <div class="msg">
+        <p class="text_danger">{{msg}}</p>
+      </div>
+      <div class="action">
+        <button class="close" (click)="msg = ''"><i class="fa-solid fa-xmark i_close"></i></button>
+      </div>
+    </div>
+  </div>
     <div class="form_container">
         <h1 class="title">ADMINISTRACION</h1>
         <form action="" class="form">
             <i class="fa-solid fa-gears icon"></i>
-            <input type="email" class="input" name="email" placeholder="Email" [(ngModel)]="user.email">
-            <input type="password" class="input" name="password" placeholder="Contraseña" [(ngModel)]="user.password">
+            <input type="email" class="input" name="email" placeholder="Email" [(ngModel)]="user.email" (click)="isError = false && msg = ''">
+            <p *ngIf="errors && errors.email && isError" class="text_danger">* {{errors.email}}</p>
+            <input type="password" class="input" name="password" placeholder="Contraseña" [(ngModel)]="user.password" (click)="isError = false && msg = ''">
+            <p *ngIf="errors && errors.password && isError" class="text_danger">* {{errors.password}}</p>
             <input type="button" value="Ingresar" class="input btn" (click)="login()">
         </form>
     </div>

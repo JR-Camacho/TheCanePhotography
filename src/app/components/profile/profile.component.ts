@@ -30,12 +30,17 @@ export class ProfileComponent implements OnInit {
   needConfirmation:boolean = false;
   messages:any[];
   counter:number;
+  errors: any;
+  isError: boolean;
+  isLoading:boolean = false;
+  msg:string;
 
   setConfirmation(){
     this.needConfirmation = true;
   }
 
   getMyProfile(){
+    this.isLoading = true;
     this.headers = new HttpHeaders({
       'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
@@ -45,41 +50,65 @@ export class ProfileComponent implements OnInit {
       this.userForUpdate.id = this.user.id;
       this.userForUpdate.name = this.user.name;
       this.userForUpdate.password = this.password;
+      this.isLoading = false;
     }, err => {
       console.log(err);
+      this.isLoading = false;
     })
   }
 
   getAcounts(){
+    this.isLoading = true;
     this.userService.getUsers(this.headers).subscribe(res => {
       console.log(res)
       this.acounts = Object.values(res);
-    }, err => console.log(err))
+      this.isLoading = false;
+    }, err => {
+      console.log(err)
+      this.isLoading = false;
+    })
   }
 
   updateMyProfile(){
+    this.isLoading = true;
     this.userService.updateUserProfile(this.headers, this.userForUpdate).subscribe(res => {
       console.log(res)
       this.getMyProfile();
-    }, 
-    err => console.log(err));
+      this.msg = 'Actualizacion exitosa.'
+    }, err => {
+      console.log(err)
+      this.errors = err.error.errors;
+      this.isError = true;
+      this.isLoading = false;
+      this.msg = 'Actualizacion fallida.'
+    });
   }
 
   deleteAcount(){
+    this.isLoading = true;
     this.authService.deleteAcount(this.headers, this.user.id).subscribe(res => {
       console.log(res);
+      this.isLoading = false;
       sessionStorage.removeItem('token');
       this.router.navigate(['/'])
-    }, err => console.log(err));
+    }, err => {
+      console.log(err)
+      this.isLoading = false;
+    });
   }
 
   getMessages(){
+    this.isLoading = true;
     this.messagesService.getMessages(this.headers).subscribe(res => {
       console.log(res);
       this.messages = Object.values(res);
       this.counter = this.messages.length;
+      this.isLoading = false;
       console.log(this.counter);
-    }, err => console.log(err))
+    }, err => {
+      console.log(err)
+      this.isLoading = false;
+    })
   }
 
 }

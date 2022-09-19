@@ -1,7 +1,37 @@
 <main class="main" *ngIf="message">
     <h1 class="title">{{message.name | uppercase}}</h1>
-    <div class="message_container">
-    
+    <div class="container">
+        <div class="message_container">
+            <div class="box_data place" *ngIf="message.place">
+                <i class="fa-solid fa-location-pin icon"></i>
+                <div class="text_data">
+                    <p class="text t_place">{{message.place}}</p>
+                </div>
+            </div>
+            <div class="box_data date" *ngIf="message.date_time">
+                <i class="fa-solid fa-calendar-days icon"></i>
+                <div class="text_data">
+                    <p class="text t_date">{{message.date_time | date}} - {{message.date_time | date:'hh:mm'}}</p>
+                </div>
+            </div>
+            <div class="box_data phone" *ngIf="message.phone">
+                <i class="fa-solid fa-phone icon"></i>
+                <div class="text_data">
+                    <p class="text t_phone">{{message.phone}}</p>
+                </div>
+            </div>
+            <div class="box_data phone" *ngIf="message.celebration">
+                <i class="fa-solid fa-gift"></i>
+                <div class="text_data">
+                    <p class="text t_celebration">{{message.celebration}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="msg_container">
+            <h2 class="subtitle">MENSAJE</h2>
+            <textarea name="" id="" cols="30" rows="10" readonly class="textarea">{{message.message}}</textarea>
+        </div>
     </div>
+    
 
 </main>

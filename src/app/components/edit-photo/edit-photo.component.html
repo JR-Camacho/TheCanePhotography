@@ -1,13 +1,16 @@
 <main class="main">
+    <app-spinner *ngIf="isLoading"></app-spinner>
     <div class="form_container">
     <h1 class="title">EDITA UNA FOTO</h1>
     <form action="" class="form" enctype="multipart/form-data">
         <div class="contenedor-btn-file" (click)="open()">
              <img *ngIf="!photoForPreview && photo" src="{{photo.photo}}" alt="" class="img_preview">
              <img *ngIf="photoForPreview" src="{{photoForPreview}}" alt="" class="img_preview">
-            <input type="file" id="photo" name="photo" class="input_file" (change)="file($event)" accept=".jpg, .png, jpge">
+            <input type="file" id="photo" name="photo" class="input_file" (change)="file($event)" accept=".jpg, .png, .jpeg">
         </div>
-        <input type="button" class="btn" value="Actualizar" (click)="updatePhoto()">
+        <p *ngIf="errors && errors.photo && isError" class="text_danger">* Dede de seleccionar una imagen. La imagen no debe de sobrepasar los 4 mb</p>
+        <input *ngIf="!isLoading" type="button" class="btn" value="Actualizar" (click)="updatePhoto()">
+        <input *ngIf="isLoading" type="button" class="btn" value="Actualizando..." (click)="updatePhoto()" disabled>
     </form>
 </div>
 </main>

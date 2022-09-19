@@ -22,13 +22,21 @@ export class RegistroComponent implements OnInit {
 
   headers:any;
   user:User = new User;
+  errors: any;
+  isError: boolean;
+  isLoading = false;
  
   register(){
+    this.isLoading = true;
     this.authService.register(this.user, this.headers).subscribe(res => {
       console.log(res);
+      this.isLoading = false;
       this.router.navigate(['/profile']);
     }, err => {
       console.log(err)
+      this.errors = err.error.errors;
+      this.isError = true;
+      this.isLoading = false;
     });
   }
 

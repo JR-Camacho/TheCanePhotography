@@ -1,17 +1,25 @@
 <!-- Contenedor Principal -->
 <main class="main__container">
-    <!-- Componente Barra de Redes
-    <app-barra-redes></app-barra-redes> -->
-
-     <ng-container *ngIf="!phone">
+  <app-spinner *ngIf="isLoading"></app-spinner>
+  <div class="overlay" *ngIf="msg">
+    <div class="modal">
+      <div class="msg">
+        <p class="text_danger">{{msg}}</p>
+      </div>
+      <div class="action">
+        <button class="close" (click)="msg = ''"><i class="fa-solid fa-xmark i_close"></i></button>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="!phone">
     <app-barra-redes></app-barra-redes>
   </ng-container>
-
+  
   <ng-container *ngIf="phone">
     <app-barra-redes-phone></app-barra-redes-phone>
   </ng-container>
   
-<!-- 
+  <!-- 
     <article class="form_container">
         <h1 class="title">CONTACTANOS</h1>
         <h2 class="subtitle">{{"Rellena el formulario y envianos tu peticion" | uppercase}}</h2>
@@ -34,28 +42,48 @@
                 <textarea name="comentario" id="" cols="30" rows="10" class="textarea"></textarea>
             </div>
         </form>
-    </article> -->
+      </article> -->
 
-    <div class="container">
-        <div class="form_container">
-            <h1 class="title">AGENDA UNA CITA</h1>
-              <form action="" class="form">
-                <i class="fa-solid fa-paper-plane icon"></i>
-                <label for="name" class="label">Nombre completo *</label>
-                  <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="message.name">
-                  <label for="name" class="label">Dirección de correo electronico *</label>
-                  <input type="email" class="input" name="email" placeholder="Correo" [(ngModel)]="message.email">
-                  <label for="name" class="label">Celular o telefono</label>
-                  <input type="text" class="input" name="phone" placeholder="Telefono" [(ngModel)]="message.phone">
-                  <label for="name" class="label">Lugar</label>
-                  <input type="text" class="input" name="place" placeholder="Lugar" [(ngModel)]="message.place">
-                  <label for="name" class="label">Fecha y hora</label>
-                  <input type="datetime-local" class="input" name="date_time" [(ngModel)]="message.date_time">
-                  <label for="name" class="label">Mensaje</label>
-                    <textarea name="message" cols="30" rows="10" class="input textarea" placeholder="Mensaje" [(ngModel)]="message.message"></textarea>
-                  <input type="button" value="Enviar" class="input btn" (click)="newMessage()">
-              </form>
-          </div>
+  <div class="container">
+    <div class="form_container">
+      <h1 class="title">AGENDA UNA CITA</h1>
+      <form action="https://formsubmit.co/thecanephotography@gmail.com" method="POST" class="form">
+        <i class="fa-solid fa-paper-plane icon"></i>
+        <label for="name" class="label">Nombre completo *</label>
+        <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="message.name"
+          (click)="isError = false">
+        <p *ngIf="errors && errors.name && isError" class="text_danger">* {{errors.name}}</p>
+        <label for="email" class="label">Dirección de correo electronico *</label>
+        <input type="email" class="input" name="email" placeholder="Correo" [(ngModel)]="message.email"
+          (click)="isError = false">
+        <p *ngIf="errors && errors.email && isError" class="text_danger">* {{errors.email}}</p>
+        <label for="phone" class="label">Celular o telefono</label>
+        <input type="text" class="input" name="phone" placeholder="Telefono" [(ngModel)]="message.phone"
+          (click)="isError = false">
+        <label for="place" class="label">Lugar</label>
+        <input type="text" class="input" name="place" placeholder="Lugar" [(ngModel)]="message.place"
+          (click)="isError = false">
+        <label for="date_time" class="label">Fecha y hora</label>
+        <input type="datetime-local" class="input" name="date_time" [(ngModel)]="message.date_time"
+          (click)="isError = false">
+        <label for="celebration" class="label">Tipo de evento</label>
+        <select name="celebration" id="celebration" class="input" [(ngModel)]="message.celebration"
+        (click)="isError = false">
+          <option value="" selected>Ninguno</option>
+          <option value="Boda">Boda</option>
+          <option value="Cumpleaño">Cumpleaños</option>
+          <option value="Sesion de fotos">Sesion de fotos</option>
+          <option value="Filmacion de videos">Filmacion de videos</option>
+        </select>
+        <label for="message" class="label">Mensaje</label>
+        <textarea name="message" cols="30" rows="10" class="input textarea" placeholder="Mensaje"
+          [(ngModel)]="message.message" (click)="isError = false"></textarea>
+        <input *ngIf="!isLoading" type="button" value="Enviar" class="input btn" (click)="newMessage()">
+        <input *ngIf="isLoading" type="button" value="Enviando..." class="input btn" (click)="newMessage()" disabled>
+        <input type="hidden" name="_next" value="http://localhost:4200/contactos">
+        <input type="hidden" name="_captcha" value="false">
+      </form>
     </div>
+  </div>
 
 </main>

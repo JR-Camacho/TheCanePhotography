@@ -10,14 +10,14 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   getUserProfile(headers:any){
-    return this.http.get('http://127.0.0.1:8000/api/user-profile', {headers:headers});
+    return this.http.get('https://thecanephotography.herokuapp.com/api/user-profile', {headers:headers});
   }
 
   getUsers(headers:any){
-    return this.http.get('http://127.0.0.1:8000/api/users', {headers:headers});
+    return this.http.get('https://thecanephotography.herokuapp.com/api/users', {headers:headers});
   }
 
   updateUserProfile(headers:any, user:User){
-    return this.http.put('http://127.0.0.1:8000/api/update-profile', user, {headers:headers});
+    return this.http.put('https://thecanephotography.herokuapp.com/api/update-profile', user, {headers:headers});
   }
 }

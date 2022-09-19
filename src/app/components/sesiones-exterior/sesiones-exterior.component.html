@@ -1,7 +1,6 @@
 <!-- Contenedor Principal -->
 <main class="main__container">
-    <!-- Componente Barra de Redes
-    <app-barra-redes></app-barra-redes> -->
+    <app-spinner *ngIf="!photos || isLoading == true"></app-spinner>
 
     <ng-container *ngIf="!phone">
         <app-barra-redes></app-barra-redes>

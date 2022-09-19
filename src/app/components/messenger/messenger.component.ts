@@ -24,6 +24,8 @@ export class MessengerComponent implements OnInit {
   messages:any[];
   counter:any;
   id_articulo:number;
+  msg:string;
+  isDeleting:boolean = false; 
 
   setConfirmation(id_articulo:number){
      this.needConfirmation = true;
@@ -39,10 +41,17 @@ export class MessengerComponent implements OnInit {
   }
 
   deleteMessage(){
+    this.isDeleting = true;
     this.messagesService.deleteMessage(this.headers, this.id_articulo).subscribe(res => {
       console.log(res)
+      this.isDeleting = false;
       this.needConfirmation = false;
       this.getMessages();
-    },err => console.log(err))
+      this.msg = 'Mensaje eliminado con exito.'
+    },err => {
+      console.log(err)
+      this.isDeleting = false;
+      this.msg = 'No se pudo eliminar el mensaje.'
+    })
   }
 }

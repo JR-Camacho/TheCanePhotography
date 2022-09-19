@@ -24,9 +24,13 @@ export class EditPhotoComponent implements OnInit {
   photoForPreview: any;
   id:any;
   headers:any;
+  errors: any;
+  isError: boolean;
+  isLoading:boolean = false;
 
   open(){
      document.getElementById('photo')?.click();
+     this.isError = false;
   }
 
   file(event: any) {
@@ -58,6 +62,7 @@ export class EditPhotoComponent implements OnInit {
   }
 
   updatePhoto(){
+    this.isLoading = true;
     const photo = new FormData();
     photo.append('id', this.id);
     photo.append('photo', this.photoForUpdate);
@@ -65,9 +70,13 @@ export class EditPhotoComponent implements OnInit {
 
     this.photoService.updatePhoto(this.headers, photo).subscribe(res => {
       console.log(res);
+      this.isLoading = false;
       this.photo.category == 'estudio' ? this.router.navigate(['/sesiones_estudio']) : this.router.navigate(['/sesiones_exterior']);
     }, err => {
       console.log(err)
+      this.isLoading = false;
+      this.errors = err.error.errors;
+      this.isError = true;
     })
   }
 

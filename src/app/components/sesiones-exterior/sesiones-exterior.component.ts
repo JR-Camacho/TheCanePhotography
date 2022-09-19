@@ -25,6 +25,7 @@ export class SesionesExteriorComponent implements OnInit {
   isLogged:boolean = false;
   photos:any[];
   needConfirmation:boolean = false;
+  isLoading:boolean = false;
 
   setConfirmation(){
     this.needConfirmation? this.needConfirmation = false : this.needConfirmation = true;
@@ -40,13 +41,18 @@ export class SesionesExteriorComponent implements OnInit {
   }
 
   deletePhoto(id:number){
+    this.isLoading = true;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
     this.photoService.deletePhoto(headers, id).subscribe(res => {
       console.log(res);
       this.getPhotos();
-    }, err => console.log(err));
+      this.isLoading = false;
+    }, err => {
+      console.log(err)
+      this.isLoading = false;
+    });
   }
  
 }

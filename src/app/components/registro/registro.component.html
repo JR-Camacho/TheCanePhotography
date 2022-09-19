@@ -1,11 +1,15 @@
 <main class="main">
+    <app-spinner *ngIf="isLoading"></app-spinner>
   <div class="form_container">
       <h1 class="title">DEFINE UN NUEVO ADMINISTRADOR</h1>
         <form action="" class="form">
             <i class="fa-solid fa-lock icon"></i>
-            <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="user.name">
-            <input type="email" class="input" name="email" placeholder="Email" [(ngModel)]="user.email">
-            <input type="password" class="input" name="password" placeholder="Contraseña" [(ngModel)]="user.password">
+            <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="user.name" (click)="isError = false">
+            <p *ngIf="errors && errors.name && isError" class="text_danger">* {{errors.name[0]}}</p>
+            <input type="email" class="input" name="email" placeholder="Email" [(ngModel)]="user.email" (click)="isError = false">
+            <p *ngIf="errors && errors.email && isError" class="text_danger">* {{errors.email[0]}}</p>
+            <input type="password" class="input" name="password" placeholder="Contraseña" [(ngModel)]="user.password" (click)="isError = false">
+            <p *ngIf="errors && errors.password && isError" class="text_danger">* {{errors.password[0]}}</p>
             <input type="button" value="Registrar" class="input btn" (click)="register()">
         </form>
     </div>

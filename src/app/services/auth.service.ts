@@ -10,19 +10,19 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   register(user:User, headers:any){
-    return this.http.post('http://127.0.0.1:8000/api/register', user, {headers:headers});
+    return this.http.post('https://thecanephotography.herokuapp.com/api/register', user, {headers:headers});
   }
 
   login(user:User){
-    return this.http.post('http://127.0.0.1:8000/api/login', user);
+    return this.http.post('https://thecanephotography.herokuapp.com/api/login', user);
   }
 
   logout(headers:any){
-    return this.http.get('http://127.0.0.1:8000/api/logout', {headers:headers});
+    return this.http.get('https://thecanephotography.herokuapp.com/api/logout', {headers:headers});
   }
 
   deleteAcount(headers:any,id:number){
-    return this.http.delete(`http://127.0.0.1:8000/api/delete-acount/${id}`, {headers:headers});
+    return this.http.delete(`https://thecanephotography.herokuapp.com/api/delete-acount/${id}`, {headers:headers});
   }
 
 }

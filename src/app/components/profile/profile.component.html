@@ -1,9 +1,20 @@
 <main class="main">
+<app-spinner *ngIf="isLoading"></app-spinner>
+  <div class="overlay" *ngIf="msg">
+    <div class="modal">
+      <div class="msg">
+        <p class="text_danger">{{msg}}</p>
+      </div>
+      <div class="action">
+        <button class="close" (click)="msg = ''"><i class="fa-solid fa-xmark i_close"></i></button>
+      </div>
+    </div>
+  </div>
     <div class="section">
         <h1 class="title">{{userForUpdate.name | uppercase}}</h1>
         <button class="btn_msg" routerLink="/messages"><i class="fa-solid fa-message icon_msg"></i> <span class="counter"> {{counter}}</span></button>
-        <div class="modal" *ngIf="needConfirmation">
-            <p class="text_modal">¿Realmente desea eliminar este mensaje?</p>
+        <div class="modalConfirm" *ngIf="needConfirmation">
+            <p class="text_modal">¿Realmente desea eliminar esta cuenta?</p>
             <div class="action_modal">
                 <button class="btn_modal cancel" (click)="needConfirmation = false">Cancelar</button>
                 <button class="btn_modal confirm" (click)="deleteAcount()">Confirmar</button>
@@ -26,16 +37,17 @@
         <div class="form_container">
             <h2 class="subtitle">EDITA TU CUENTA</h2>
             <form action="" class="form">
-                <!-- <i class="fa-solid fa-user icon"></i> -->
                 <div class="row">
-                    <label for="name" class="label">Nombre</label>
-                    <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="userForUpdate.name">
+                    <label for="name" class="label">Nombre *</label>
+                    <input type="text" class="input" name="name" placeholder="Nombre" [(ngModel)]="userForUpdate.name" (click)="isError = false">
                 </div>
+                <p *ngIf="errors && errors.name && isError" class="text_danger">* {{errors.name[0]}}</p>
                 <div class="row">
-                    <label for="password" class="label">Contraseña</label>
+                    <label for="password" class="label">Contraseña *</label>
                     <input type="password" class="input" name="password" placeholder="Contraseña"
-                        [(ngModel)]="userForUpdate.password">
-                </div>
+                        [(ngModel)]="userForUpdate.password" (click)="isError = false">
+                    </div>
+                <p *ngIf="errors && errors.password && isError" class="text_danger">* {{errors.password[0]}}</p>
                 <input type="button" value="Actualizar" class="input btn" (click)="updateMyProfile()">
                 <input type="button" value="Eliminar cuenta" class="input btn eliminar" *ngIf="!needConfirmation" (click)="setConfirmation()">
                 <input type="button" value="Eliminar cuenta" class="input btn eliminar" *ngIf="needConfirmation" (click)="setConfirmation()" disabled>

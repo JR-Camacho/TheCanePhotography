@@ -27,7 +27,7 @@ const routes: Routes = [
     path: 'graficos', component:GraficosComponent
   },
   {
-    path: 'personal', component:PersonalComponent
+    path: 'nosotros', component:PersonalComponent
   },
   {
     path: 'contactos', component:ContactosComponent

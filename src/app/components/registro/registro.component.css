@@ -19,7 +19,6 @@
     height: 450px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -43,6 +42,11 @@
 .icon{
     font-size: 100px;
 }
+
+.text_danger{
+    color: #7B241C;
+    font-size: 0.8rem;
+  }
 
 @media screen and (max-width: 725px) {   
     .form{

@@ -112,6 +112,9 @@ header {
 
 .navPhone{
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .menuPhone{
@@ -147,12 +150,6 @@ header {
   width: 100%;
   z-index: 1;
   background-color: #fff;
-}
-
-.navPhone{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .center{

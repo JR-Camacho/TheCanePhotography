@@ -6,6 +6,7 @@ export class Message {
     place:string;
     date_time:string;
     message:string;
+    celebration:string = '';
 
     constructor(){}
 }

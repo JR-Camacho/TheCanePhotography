@@ -20,9 +20,13 @@ export class NewPhotoComponent implements OnInit {
   photoForUpload: any;
   photoForPreview: any;
   category:string;
+  errors: any;
+  isError: boolean;
+  isLoading:boolean = false;
 
   open(){
      document.getElementById('photo')?.click();
+     this.isError = false;
   }
 
   file(event: any) {
@@ -47,6 +51,7 @@ export class NewPhotoComponent implements OnInit {
   }
 
   newPhoto(){
+    this.isLoading = true;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
@@ -56,9 +61,13 @@ export class NewPhotoComponent implements OnInit {
 
     this.photoService.setNewPhoto(headers, photo).subscribe(res => {
       console.log(res);
+      this.isLoading = false;
       this.category == 'estudio' ? this.router.navigate(['/sesiones_estudio']) : this.router.navigate(['/sesiones_exterior']);
     }, err => {
       console.log(err)
+      this.isLoading = false;
+      this.errors = err.error.errors;
+      this.isError = true;
     })
   }
 

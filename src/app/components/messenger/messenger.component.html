@@ -1,7 +1,18 @@
 <div class="container_main">
+    <app-spinner *ngIf="!messages || isDeleting"></app-spinner>
+    <div class="overlay" *ngIf="msg">
+        <div class="modal">
+          <div class="msg">
+            <p class="text_danger">{{msg}}</p>
+          </div>
+          <div class="action">
+            <button class="close" (click)="msg = ''"><i class="fa-solid fa-xmark i_close"></i></button>
+          </div>
+        </div>
+      </div>
     <div class="container">
         <h1 class="title">BANDEJA DE ENTRADA <i class="fa-solid fa-message icon_msg"></i> </h1>
-        <div class="modal" *ngIf="needConfirmation">
+        <div class="modalConfirm" *ngIf="needConfirmation">
             <p class="text_modal">¿Realmente desea eliminar este mensaje?</p>
             <div class="action_modal">
                 <button class="btn_modal cancel" (click)="needConfirmation = false">Cancelar</button>
@@ -14,7 +25,7 @@
                     <div class="info_msg">
                         <p class="text name">{{message.name}} <i class="fa-solid fa-user"></i></p>
                         <p class="text email">{{message.email}} <i class="fa-solid fa-envelope"></i></p>
-                        <p class="text date">{{message.created_at | date }} {{message.created_at | date:'- hh:mm' }}</p>
+                        <p class="text date">{{message.created_at | date }} {{message.created_at | date:'- hh:mm' }} <i class="fa-solid fa-clock"></i></p>
                     </div>
                     <div class="actions">
                         <button class="btn_action" [routerLink]="['/message', message.id]"><i class="fa-solid fa-ellipsis icon_action"></i></button>

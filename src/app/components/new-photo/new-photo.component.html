@@ -1,4 +1,4 @@
-
+<app-spinner *ngIf="isLoading"></app-spinner>
 <div class="form_container">
     <h1 class="title">NUEVA FOTO</h1>
     <form action="" class="form" enctype="multipart/form-data">
@@ -8,8 +8,10 @@
                   Adjuntar fotografia
              </div>
              <img *ngIf="photoForPreview" src="{{photoForPreview}}" alt="" class="img_preview">
-            <input type="file" id="photo" name="photo" class="input_file" (change)="file($event)" accept=".jpg, .png, jpge">
+            <input type="file" id="photo" name="photo" class="input_file" (change)="file($event)" accept=".jpg, .png, .jpeg">
         </div>
-        <input type="button" class="btn" value="Subir" (click)="newPhoto()">
+        <p *ngIf="errors && errors.photo[0] && isError" class="text_danger">* Dede de seleccionar una imagen. La imagen no debe de sobrepasar los 4 mb</p>
+        <input *ngIf="!isLoading" type="button" class="btn" value="Subir" (click)="newPhoto()">
+        <input *ngIf="isLoading" type="button" class="btn" value="Subiendo..." (click)="newPhoto()" disabled>
     </form>
 </div>

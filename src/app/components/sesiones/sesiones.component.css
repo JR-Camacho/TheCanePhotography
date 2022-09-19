@@ -39,28 +39,23 @@
     cursor: pointer;
 }
 
-.sesion1Img{
+.picture{
     width: 100%;
     height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(/assets/images/estudio/sesion6/img2.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.sesion1Img{
+    background-image: url(https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609622/photos/inicio/img2_mca3ji.jpg);
+}
+
 .sesion2Img{
-    width: 100%;
-    height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(/assets/images/exterior/varias/img7.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609945/photos/inicio/img7_cgkdmx.jpg);
 }
 
 .img{

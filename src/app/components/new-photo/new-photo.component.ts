@@ -23,6 +23,11 @@ export class NewPhotoComponent implements OnInit {
   errors: any;
   isError: boolean;
   isLoading:boolean = false;
+  error:string = '';
+
+  clearMessage(){
+    this.error = '';
+  }
 
   open(){
      document.getElementById('photo')?.click();
@@ -51,6 +56,7 @@ export class NewPhotoComponent implements OnInit {
   }
 
   newPhoto(){
+    this.clearMessage();
     this.isLoading = true;
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -67,6 +73,7 @@ export class NewPhotoComponent implements OnInit {
       console.log(err)
       this.isLoading = false;
       this.errors = err.error.errors;
+      this.error = 'Se ha producido un error, por favor verifica que todo este bien.';
       this.isError = true;
     })
   }

@@ -1,4 +1,9 @@
 /* General y Principal */
+.component{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 /* Nav Bar */
 header {
@@ -160,6 +165,11 @@ header {
 }
 
 /*Footer*/
+footer{
+  width: 100%;
+  margin-top: auto;
+}
+
 .footer__container{
   width: 100%;
   margin-top: 50px;

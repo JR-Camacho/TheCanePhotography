@@ -1,4 +1,7 @@
 <app-spinner *ngIf="isLoading"></app-spinner>
+
+<app-message-error *ngIf="error" [message]="error"></app-message-error>
+
 <div class="form_container">
     <h1 class="title">NUEVA FOTO</h1>
     <form action="" class="form" enctype="multipart/form-data">

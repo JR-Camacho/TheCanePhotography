@@ -27,6 +27,11 @@ export class EditPhotoComponent implements OnInit {
   errors: any;
   isError: boolean;
   isLoading:boolean = false;
+  error:string = '';
+
+  clearMessage(){
+    this.error = '';
+  }
 
   open(){
      document.getElementById('photo')?.click();
@@ -55,13 +60,15 @@ export class EditPhotoComponent implements OnInit {
   }
 
   getPhoto(){
+    this.clearMessage();
     this.photoService.showPhoto(this.headers, this.id).subscribe(res => {
       console.log(res);
       this.photo = res;
-    }, err => console.log(err));
+    }, err => this.error = 'Error. Por favor revise su conexion.');
   }
 
   updatePhoto(){
+    this.clearMessage();
     this.isLoading = true;
     const photo = new FormData();
     photo.append('id', this.id);
@@ -76,8 +83,8 @@ export class EditPhotoComponent implements OnInit {
       console.log(err)
       this.isLoading = false;
       this.errors = err.error.errors;
+      this.error = 'Se ha producido un error, por favor verifica que todo este bien.';
       this.isError = true;
     })
   }
-
 }

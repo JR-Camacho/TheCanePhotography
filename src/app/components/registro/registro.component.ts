@@ -24,9 +24,15 @@ export class RegistroComponent implements OnInit {
   user:User = new User;
   errors: any;
   isError: boolean;
+  error:string = '';
   isLoading = false;
- 
+
+  clearMessage(){
+    this.error = '';
+  }
+
   register(){
+    this.clearMessage();
     this.isLoading = true;
     this.authService.register(this.user, this.headers).subscribe(res => {
       console.log(res);
@@ -35,6 +41,7 @@ export class RegistroComponent implements OnInit {
     }, err => {
       console.log(err)
       this.errors = err.error.errors;
+      if(!this.errors) this.error = 'Error to create the acount.';
       this.isError = true;
       this.isLoading = false;
     });

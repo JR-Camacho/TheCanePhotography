@@ -1,15 +1,9 @@
 <div class="container_main">
     <app-spinner *ngIf="!messages || isDeleting"></app-spinner>
-    <div class="overlay" *ngIf="msg">
-        <div class="modal">
-          <div class="msg">
-            <p class="text_danger">{{msg}}</p>
-          </div>
-          <div class="action">
-            <button class="close" (click)="msg = ''"><i class="fa-solid fa-xmark i_close"></i></button>
-          </div>
-        </div>
-      </div>
+
+    <app-message-error *ngIf="error" [message]="error"></app-message-error>
+    <app-message-confirmation *ngIf="confirmation" [message]="confirmation"></app-message-confirmation>
+
     <div class="container">
         <h1 class="title">BANDEJA DE ENTRADA <i class="fa-solid fa-message icon_msg"></i> </h1>
         <div class="modalConfirm" *ngIf="needConfirmation">

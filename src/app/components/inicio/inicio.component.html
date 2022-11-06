@@ -1,83 +1,129 @@
 <!-- Contenedor Principal -->
 <main class="main__container">
-    <!-- Componente Barra de Redes -->
-    <!-- <ng-container *ngIf="!phone">
-        <app-barra-redes></app-barra-redes>
-    </ng-container> -->
-
-     <ng-container *ngIf="!phone">
+  <!-- Componente Barra de Redes -->
+  <ng-container *ngIf="!phone">
     <app-barra-redes></app-barra-redes>
   </ng-container>
 
   <ng-container *ngIf="phone">
     <app-barra-redes-phone></app-barra-redes-phone>
   </ng-container>
-  
-    <!-- Contenedor Secundario -->
-    <section class="contenido">
-        <!-- <section class="container_father">
+
+  <!-- Contenedor Secundario -->
+  <section class="contenido">
+    <!-- <section class="container_father">
             
         </section> -->
-        <!-- Articulo de Titulos -->
-        <article class="contenido_titulos article">
-            <div class="titles">
-                <h1 class="title">THE CANE PHOTOGRAPHY</h1>
-                <h2 class="eslogan">{{'¡Capturamos tus mejores momentos!' | uppercase}}</h2>
-                <div class="box_subtitle">
-                    <h2 class="subtitle">Una sesión de fotos profesional inspirada en las revistas. Déjame mostrarte la belleza que hay en ti, tendrás tus mejores retratos.</h2>
-                </div>
-            </div>
-            <!-- Articulo 1 de Contenido -->
-            <article class="articulo1 article">
-                <img src="https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609579/photos/inicio/img1_klawxk.jpg" alt="TheCanePhotography" class="img4">
-            </article>
-        </article>
-          <!-- Articulo 2 de Contenido -->
-        <article class="articulo2 article top">
-            <!-- Imagen -->
-            <div class="box2_1">
-                <img src="https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609597/photos/inicio/img1_p7tner.jpg" alt="TheCanePhotography" class="img2 img">
-            </div>
-            <!-- Textos -->
-            <div class="box2_2">
-                <h3 class="sub_subtitle">¿Cuándo fue la última vez que te fotografiaste profesionalmente?</h3>
-                <p class="texto_box2_2">Todo el mundo se merece tener fotos profesionales que podrían protagonizar la portada de una revista.</p>
-                <img src="https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609718/photos/inicio/img1_bg5ozn.jpg" alt="TheCanePhotography" class="img3">
-            </div>
-        </article>
-        <!-- Articulo 3 de Contenido -->
-        <article class="articulo3 article top">
-            <!-- Texto y Listas -->
-            <div class="box3_1">
-                <h2 class="subtitle_box3">¿Qué incluye una sesión de fotos?</h2>
-                <p class="texto_box3">Las sesiones de fotos se organizan con una entrevista personal donde hablamos sobre tu imagen, vestuario, maquillaje,  peinado y las posibilidades que te ofrece el estudio.</p>
-                <ul class="ul_box3">
-                    <li class="li_box3">Una entrevista personal</li>
-                    <li class="li_box3">Una consulta de vestuario adaptado a tu estilo</li>
-                    <li class="li_box3">Maquillaje y peinado</li>
-                    <li class="li_box3">Múltiples cambios de vestuario</li>
-                    <li class="li_box3">Diferentes fondos y luces</li>
-                </ul>
-            </div>
-            <!-- Imagen -->
-            <div class="box3_2">
-                <img src="https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609606/photos/inicio/img3_upopjl.jpg" alt="TheCanePhotography" class="img4">
-            </div>
-        </article>
-        <!-- Articulo 4 de Contenido -->
-        <article class="articulo4 article">
-            <h2 class="subtitle_box4 sub_subtitle">SOMOS EXPERTOS EN VIDEOGRAFIA</h2>
-            <p class="textoBox4">Le damos la mejor a nuestros clientes con el fin de que sus momentos favoritos queden registados, no solo en sus memorias, sino que tambien en las nuestras.</p>
-            <!-- Iframes -->
-            <div class="box4">
-                <div class="box4_1">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qU5sttAlrS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe1"></iframe>
-                </div>
-                <div class="box4_2">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u5aQr1JiaDg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe2"></iframe>
-                </div>
-            </div>
-        </article>
-    </section>
+    <!-- Articulo de Titulos -->
+    <article class="contenido_titulos article">
+      <div class="titles">
+        <h1 class="title">THE CANE PHOTOGRAPHY</h1>
+        <h2 class="eslogan">
+          {{ "¡Capturamos tus mejores momentos!" | uppercase }}
+        </h2>
+        <div class="box_subtitle">
+          <h2 class="subtitle">Nos encargamos de controlar los detalles; la luz, el encuatre, sombras, los planos y el enfoque. Encontrar los lugares ideales para capturar los mejores momentos y asi crear footografias creativas y naturales.</h2>
+        </div>
+      </div>
+      <!-- Articulo 1 de Contenido -->
+      <article class="articulo1 article">
+        <img
+          src="https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609579/photos/inicio/img1_klawxk.jpg"
+          alt="TheCanePhotography"
+          class="img4"
+        />
+      </article>
+    </article>
+    <!-- Articulo 2 de Contenido -->
+    <article class="articulo2 article top">
+      <!-- Imagen -->
+      <div class="box2_1">
+        <img
+          src="https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609597/photos/inicio/img1_p7tner.jpg"
+          alt="TheCanePhotography"
+          class="img2 img"
+        />
+      </div>
+      <!-- Textos -->
+      <div class="box2_2">
+        <h3 class="sub_subtitle">
+          ¿Cuándo fue la última vez que te fotografiaste profesionalmente?
+        </h3>
+        <p class="texto_box2_2">
+          Todo el mundo se merece tener fotos profesionales que podrían
+          protagonizar la portada de una revista.
+        </p>
+        <img
+          src="https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609718/photos/inicio/img1_bg5ozn.jpg"
+          alt="TheCanePhotography"
+          class="img3"
+        />
+      </div>
+    </article>
+    <!-- Articulo 3 de Contenido -->
+    <article class="articulo3 article top">
+      <!-- Texto y Listas -->
+      <div class="box3_1">
+        <h2 class="subtitle_box3">¿Qué incluye una sesión de fotos?</h2>
+        <p class="texto_box3">
+          Las sesiones de fotos se organizan con una entrevista personal donde
+          hablamos sobre tu imagen, vestuario, maquillaje, peinado y las
+          posibilidades que te ofrece el estudio.
+        </p>
+        <ul class="ul_box3">
+          <li class="li_box3">Una entrevista personal</li>
+          <li class="li_box3">
+            Una consulta de vestuario adaptado a tu estilo
+          </li>
+          <li class="li_box3">Maquillaje y peinado</li>
+          <li class="li_box3">Múltiples cambios de vestuario</li>
+          <li class="li_box3">Diferentes fondos y luces</li>
+        </ul>
+      </div>
+      <!-- Imagen -->
+      <div class="box3_2">
+        <img
+          src="https://res.cloudinary.com/dl4mqz24g/image/upload/v1663609606/photos/inicio/img3_upopjl.jpg"
+          alt="TheCanePhotography"
+          class="img4"
+        />
+      </div>
+    </article>
+    <!-- Articulo 4 de Contenido -->
+    <article class="articulo4 article">
+      <h2 class="subtitle_box4 sub_subtitle">SOMOS EXPERTOS EN VIDEOGRAFIA</h2>
+      <p class="textoBox4">
+        Le damos la mejor a nuestros clientes con el fin de que sus momentos
+        favoritos queden registados, no solo en sus memorias, sino que tambien
+        en las nuestras.
+      </p>
+      <!-- Iframes -->
+      <div class="box4">
+        <div class="box4_1">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/qU5sttAlrS4"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="iframe1"
+          ></iframe>
+        </div>
+        <div class="box4_2">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/u5aQr1JiaDg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="iframe2"
+          ></iframe>
+        </div>
+      </div>
+    </article>
+  </section>
 </main>
-

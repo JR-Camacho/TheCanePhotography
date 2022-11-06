@@ -22,14 +22,20 @@ export class MessengerComponent implements OnInit {
   headers:any;
   needConfirmation:boolean = false;
   messages:any[];
-  counter:any;
+  counter:number;
   id_articulo:number;
-  msg:string;
   isDeleting:boolean = false; 
+  error:string = '';
+  confirmation:string = '';
 
   setConfirmation(id_articulo:number){
-     this.needConfirmation = true;
-     this.id_articulo = id_articulo;
+    this.needConfirmation = true;
+    this.id_articulo = id_articulo;
+  }
+
+  clearMessage(){
+    this.confirmation = '';
+    this.error = '';
   }
 
   getMessages(){
@@ -41,17 +47,19 @@ export class MessengerComponent implements OnInit {
   }
 
   deleteMessage(){
+    this.clearMessage();
     this.isDeleting = true;
     this.messagesService.deleteMessage(this.headers, this.id_articulo).subscribe(res => {
       console.log(res)
       this.isDeleting = false;
       this.needConfirmation = false;
       this.getMessages();
-      this.msg = 'Mensaje eliminado con exito.'
+      this.confirmation = 'Mensaje eliminado con exito.'
     },err => {
       console.log(err)
       this.isDeleting = false;
-      this.msg = 'No se pudo eliminar el mensaje.'
+      this.needConfirmation = false;
+      this.error = 'No se pudo eliminar el mensaje.'
     })
   }
 }

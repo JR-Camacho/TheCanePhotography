@@ -25,6 +25,8 @@ import { EditPhotoComponent } from './components/edit-photo/edit-photo.component
 import { MessengerComponent } from './components/messenger/messenger.component';
 import { MessageComponent } from './components/message/message.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { MessageErrorComponent } from './components/message-error/message-error.component';
+import { MessageConfirmationComponent } from './components/message-confirmation/message-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     MessengerComponent,
     MessageComponent,
     SpinnerComponent,
+    MessageErrorComponent,
+    MessageConfirmationComponent,
   ],
   imports: [
     BrowserModule,

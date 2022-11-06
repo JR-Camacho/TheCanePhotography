@@ -15,19 +15,23 @@ export class IngresoComponent implements OnInit {
   constructor(private authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
-   }
+  }
 
   user:User = new User;
   userLogged:any;
   errors: any;
   isError: boolean;
-  msg:string;
+  msg:string = ''; 
   isLoading:boolean = false;
 
+  clearMessage(){
+    this.msg = '';
+  }
+
   login(){
+    this.clearMessage();
     this.isLoading = true;
     this.authService.login(this.user).subscribe(res => {
-      console.log(res);
       this.isLoading = false;
       this.userLogged = Object.values(res);
       console.log(this.userLogged);
@@ -38,7 +42,7 @@ export class IngresoComponent implements OnInit {
       console.log(err);
       this.isLoading = false;
       this.errors = err.error.errors;
-      this.msg = err.error.msg;
+      if(!this.errors) err.error.msg ? this.msg = err.error.msg : this.msg = 'Error to start the sesion.';
       this.isError = true;
     })
   }

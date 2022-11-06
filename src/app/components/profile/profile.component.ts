@@ -33,10 +33,16 @@ export class ProfileComponent implements OnInit {
   errors: any;
   isError: boolean;
   isLoading:boolean = false;
-  msg:string;
+  error:string = '';
+  confirmation:string = '';
 
   setConfirmation(){
     this.needConfirmation = true;
+  }
+
+  clearMessage(){
+    this.confirmation = '';
+    this.error = '';
   }
 
   getMyProfile(){
@@ -45,14 +51,12 @@ export class ProfileComponent implements OnInit {
       'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
     this.userService.getUserProfile(this.headers).subscribe(res => {
-      console.log(res);
       this.user = res;
       this.userForUpdate.id = this.user.id;
       this.userForUpdate.name = this.user.name;
       this.userForUpdate.password = this.password;
       this.isLoading = false;
     }, err => {
-      console.log(err);
       this.isLoading = false;
     })
   }
@@ -60,39 +64,37 @@ export class ProfileComponent implements OnInit {
   getAcounts(){
     this.isLoading = true;
     this.userService.getUsers(this.headers).subscribe(res => {
-      console.log(res)
       this.acounts = Object.values(res);
       this.isLoading = false;
     }, err => {
-      console.log(err)
       this.isLoading = false;
     })
   }
 
   updateMyProfile(){
+    this.clearMessage();
     this.isLoading = true;
     this.userService.updateUserProfile(this.headers, this.userForUpdate).subscribe(res => {
-      console.log(res)
       this.getMyProfile();
-      this.msg = 'Actualizacion exitosa.'
+      this.confirmation = 'Actualizacion de perfil exitosa.'
     }, err => {
-      console.log(err)
       this.errors = err.error.errors;
       this.isError = true;
       this.isLoading = false;
-      this.msg = 'Actualizacion fallida.'
+      this.error = 'Actualizacion de perfil fallida.'
     });
   }
 
   deleteAcount(){
+    this.clearMessage();
     this.isLoading = true;
     this.authService.deleteAcount(this.headers, this.user.id).subscribe(res => {
-      console.log(res);
       this.isLoading = false;
       sessionStorage.removeItem('token');
       this.router.navigate(['/'])
     }, err => {
-      console.log(err)
+      this.needConfirmation = false;
+      this.error = 'Fallo al eliminar la cuenta!'
       this.isLoading = false;
     });
   }
@@ -104,7 +106,6 @@ export class ProfileComponent implements OnInit {
       this.messages = Object.values(res);
       this.counter = this.messages.length;
       this.isLoading = false;
-      console.log(this.counter);
     }, err => {
       console.log(err)
       this.isLoading = false;

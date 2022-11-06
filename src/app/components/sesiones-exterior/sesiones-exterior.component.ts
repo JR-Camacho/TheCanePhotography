@@ -10,7 +10,6 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class SesionesExteriorComponent implements OnInit {
 
-
   constructor(private breakPointObserver: BreakpointObserver, private photoService:PhotoService) { }
 
   ngOnInit(): void {
@@ -26,17 +25,25 @@ export class SesionesExteriorComponent implements OnInit {
   photos:any[];
   needConfirmation:boolean = false;
   isLoading:boolean = false;
+  error:string = '';
+  confirmation:string = '';
+
+  clearMessage(){
+    this.confirmation = '';
+    this.error = '';
+  }
 
   setConfirmation(){
     this.needConfirmation? this.needConfirmation = false : this.needConfirmation = true;
   }
 
   getPhotos(){
+    this.isLoading = true;
     this.photoService.getFotosExterior().subscribe(res => {
-      console.log(res);
       this.photos = Object.values(res);
+      this.isLoading = false;
     }, err => {
-      console.log(err)
+      this.isLoading = false;
     })
   }
 
@@ -46,11 +53,11 @@ export class SesionesExteriorComponent implements OnInit {
       'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
     this.photoService.deletePhoto(headers, id).subscribe(res => {
-      console.log(res);
       this.getPhotos();
       this.isLoading = false;
+      this.confirmation = 'Foto eliminada con exito.';
     }, err => {
-      console.log(err)
+      this.error = 'Error. La foto no se pudo eliminar';
       this.isLoading = false;
     });
   }

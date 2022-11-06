@@ -17,7 +17,8 @@ export class ContactosComponent implements OnInit {
   errors: any;
   isError: boolean;
   isLoading:boolean = false;
-  msg:string;
+  error:string = '';
+  confirmation:string = '';
   message:Message = new Message();
 
   ngOnInit(): void {
@@ -26,18 +27,25 @@ export class ContactosComponent implements OnInit {
     )
   }
 
+  clearMessage(){
+    this.confirmation = '';
+    this.error = '';
+  }
+
   newMessage(){
+    this.clearMessage();
     this.isLoading = true;
     this.messagesService.setNewMessage(this.message).subscribe(res => {
       console.log(res);
       this.isLoading = false;
-      this.msg = 'Formulario enviado con exito.';
+      this.confirmation = 'Formulario enviado con exito.';
     }, err => {
       console.log(err);
       this.isLoading = false;
       this.errors = err.error.errors;
       this.isError = true;
-      this.msg = 'El formulario no pudo ser enviado.';
+      this.error = 'El formulario no pudo ser enviado.';
+      console.log(this.error);
     })
   }
 }

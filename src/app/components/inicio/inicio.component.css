@@ -1,12 +1,7 @@
 /* General y Principal */
 .main__container{
     display: flex;
-    /* margin-top: 30px; */
 }
-
-/* .contenido{
-    width: 100%;
-} */
 
 .subtitle{
     font-family: 'Cormorant SC', serif;
@@ -55,7 +50,7 @@
     font-family: 'Cormorant SC', serif;
     font-weight: 700;
     font-size: 1.8em;
-    color: #6d7993;
+    color: #062f4f;
 }
 
 .box_subtitle{

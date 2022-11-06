@@ -1,6 +1,9 @@
 <!-- Contenedor principal -->
 <main class="main__container">
-    <app-spinner *ngIf="!photos"></app-spinner>
+    <app-spinner *ngIf="isLoading"></app-spinner>
+
+    <app-message-error *ngIf="error" [message]="error"></app-message-error>
+    <app-message-confirmation *ngIf="confirmation" [message]="confirmation"></app-message-confirmation>
 
     <ng-container *ngIf="!phone">
         <app-barra-redes></app-barra-redes>

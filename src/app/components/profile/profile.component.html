@@ -1,18 +1,13 @@
 <main class="main">
 <app-spinner *ngIf="isLoading"></app-spinner>
-  <div class="overlay" *ngIf="msg">
-    <div class="modal">
-      <div class="msg">
-        <p class="text_danger">{{msg}}</p>
-      </div>
-      <div class="action">
-        <button class="close" (click)="msg = ''"><i class="fa-solid fa-xmark i_close"></i></button>
-      </div>
-    </div>
-  </div>
+
+  <app-message-error *ngIf="error" [message]="error"></app-message-error>
+  <app-message-confirmation *ngIf="confirmation" [message]="confirmation"></app-message-confirmation>
+
     <div class="section">
         <h1 class="title">{{userForUpdate.name | uppercase}}</h1>
         <button class="btn_msg" routerLink="/messages"><i class="fa-solid fa-message icon_msg"></i> <span class="counter"> {{counter}}</span></button>
+
         <div class="modalConfirm" *ngIf="needConfirmation">
             <p class="text_modal">¿Realmente desea eliminar esta cuenta?</p>
             <div class="action_modal">

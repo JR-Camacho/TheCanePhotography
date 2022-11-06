@@ -1,15 +1,8 @@
 <main class="main">
   <app-spinner *ngIf="isLoading"></app-spinner>
-  <div class="overlay" *ngIf="msg">
-    <div class="modal">
-      <div class="msg">
-        <p class="text_danger">{{msg}}</p>
-      </div>
-      <div class="action">
-        <button class="close" (click)="msg = ''"><i class="fa-solid fa-xmark i_close"></i></button>
-      </div>
-    </div>
-  </div>
+
+  <app-message-error *ngIf="msg" [message]="msg"></app-message-error>
+  
     <div class="form_container">
         <h1 class="title">ADMINISTRACION</h1>
         <form action="" class="form">

@@ -3,6 +3,10 @@
     display: flex;
 }
 
+.titles{
+    margin-right: 10px;
+}
+
 .subtitle{
     font-family: 'Cormorant SC', serif;
     font-size: 1em;
@@ -95,6 +99,7 @@
 .box3_1{
     width: 50%;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 .subtitle_box3{
@@ -187,6 +192,14 @@
         width: 100%;
     }
 
+    .box3_1{
+        margin-right: 0px;
+    }
+
+    .titles{
+        margin-right: 0px;
+    }
+
     .img4{
         width: 100%;
     }
@@ -220,7 +233,6 @@
 @media screen and (max-width: 720px){
     .title{
         margin: 0;
-        /* text-align: left; */
         font-size: 2em;
     }
 }
@@ -248,10 +260,6 @@
 /* Responsive Articulo 4 */
 
 @media screen and (max-width: 809px){
-    /* .articulo4{
-        width: 100%;
-    } */
-
     .box4{
         flex-direction: column;
         justify-content: center;

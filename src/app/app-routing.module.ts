@@ -30,7 +30,7 @@ const routes: Routes = [
     path: 'nosotros', component:PersonalComponent
   },
   {
-    path: 'contactos', component:ContactosComponent
+    path: 'reservaciones', component:ContactosComponent
   },
   {
     path: 'sesiones_exterior', component:SesionesExteriorComponent

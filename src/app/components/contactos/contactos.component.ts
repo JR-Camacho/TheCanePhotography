@@ -19,12 +19,14 @@ export class ContactosComponent implements OnInit {
   isLoading:boolean = false;
   error:string = '';
   confirmation:string = '';
+  now:any = new Date();
   message:Message = new Message();
 
   ngOnInit(): void {
     this.breakPointObserver.observe('(max-width: 600px)').subscribe(
       res => this.phone = res.matches
     )
+    console.log(this.now);
   }
 
   clearMessage(){
@@ -48,4 +50,7 @@ export class ContactosComponent implements OnInit {
       console.log(this.error);
     })
   }
+
 }
+
+

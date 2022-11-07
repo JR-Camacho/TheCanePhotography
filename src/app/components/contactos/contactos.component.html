@@ -34,7 +34,7 @@
           (click)="isError = false">
         <label for="date_time" class="label">Fecha y hora</label>
         <input type="datetime-local" class="input" name="date_time" [(ngModel)]="message.date_time"
-          (click)="isError = false">
+          (keydown)="isError = false">
         <label for="celebration" class="label">Tipo de evento</label>
         <select name="celebration" id="celebration" class="input" [(ngModel)]="message.celebration"
         (click)="isError = false">

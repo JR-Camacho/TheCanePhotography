@@ -1,0 +1,32 @@
+<main class="main">
+    <!-- <app-spinner *ngIf="isLoading"></app-spinner>
+    
+    <app-message-error *ngIf="error" [message]="error"></app-message-error> -->
+
+    <div class="form_container">
+    <form action="" class="form" enctype="multipart/form-data" *ngIf="!offer">
+        <div class="contenedor-btn-file" (click)="open()">
+            <div class="mandato" *ngIf="!offerForPreview">
+                <i class="fa-solid fa-image icon"></i>
+                 Adjuntar fotografia
+            </div>
+            <img *ngIf="offerForPreview" src="{{offerForPreview}}" alt="" class="img_preview">
+           <input type="file" id="offer" name="photo" class="input_file" (change)="file($event)" accept=".jpg, .png, .jpeg">
+        </div>
+        <!-- <p *ngIf="errors && errors.photo && isError" class="text_danger">* Dede de seleccionar una imagen. La imagen no debe de sobrepasar los 4 mb</p> -->
+        <input type="button" class="btn" value="Guardar" (click)="newOffer()">
+        <!-- <input *ngIf="isLoading" type="button" class="btn" value="Actualizando..." (click)="updatePhoto()" disabled> -->
+    </form>
+
+    <form action="" class="form" enctype="multipart/form-data" *ngIf="offer">
+        <div class="contenedor-btn-file" (click)="open()">
+             <img *ngIf="!offerForPreview && offer" src="{{offer.photo_url}}" alt="" class="img_preview">
+             <img *ngIf="offerForPreview" src="{{offerForPreview}}" alt="" class="img_preview">
+            <input type="file" id="offer" name="photo" class="input_file" (change)="file($event)" accept=".jpg, .png, .jpeg">
+        </div>
+        <!-- <p *ngIf="errors && errors.photo && isError" class="text_danger">* Dede de seleccionar una imagen. La imagen no debe de sobrepasar los 4 mb</p> -->
+        <input type="button" class="btn" value="Actualizar" (click)="updateOffer()">
+        <!-- <input *ngIf="isLoading" type="button" class="btn" value="Actualizando..." (click)="updatePhoto()" disabled> -->
+    </form>
+</div>
+</main>

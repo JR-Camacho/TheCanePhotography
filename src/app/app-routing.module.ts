@@ -15,6 +15,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { SesionesEstudioComponent } from './components/sesiones-estudio/sesiones-estudio.component';
 import { SesionesExteriorComponent } from './components/sesiones-exterior/sesiones-exterior.component';
 import { SesionesComponent } from './components/sesiones/sesiones.component';
+import { UpdateOfferComponent } from './components/update-offer/update-offer.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,9 @@ const routes: Routes = [
   {
     path: 'message/:id', component:MessageComponent
   },
+  {
+    path: 'update-offer', component:UpdateOfferComponent
+  }
   // {
   //   path: '**', component:PageNotFoundComponent
   // },

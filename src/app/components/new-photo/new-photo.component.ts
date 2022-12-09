@@ -13,7 +13,6 @@ export class NewPhotoComponent implements OnInit {
   constructor(private photoService:PhotoService, private activeRoute:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
-    console.log(this.category);
     sessionStorage.getItem('token') == null? this.router.navigate(['/ingresar']): this.category = this.activeRoute.snapshot.params['category'];;
   }
 

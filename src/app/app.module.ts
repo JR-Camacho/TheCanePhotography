@@ -27,6 +27,8 @@ import { MessageComponent } from './components/message/message.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { MessageErrorComponent } from './components/message-error/message-error.component';
 import { MessageConfirmationComponent } from './components/message-confirmation/message-confirmation.component';
+import { UpdateOfferComponent } from './components/update-offer/update-offer.component';
+import { ShowOfferComponent } from './components/show-offer/show-offer.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { MessageConfirmationComponent } from './components/message-confirmation/
     SpinnerComponent,
     MessageErrorComponent,
     MessageConfirmationComponent,
+    UpdateOfferComponent,
+    ShowOfferComponent,
   ],
   imports: [
     BrowserModule,
